@@ -4,11 +4,7 @@ import BackToTopButton from "./BackToTop";
 import Footer from "./Footer";
 import Header from "./Header";
 
-export default function MdxLayout({
-   children,
-}: {
-   children: React.ReactNode;
-}) {
+export default function MdxLayout({ children }: { children: React.ReactNode }) {
    const isProduction = process.env.NODE_ENV === "production";
 
    return (
@@ -35,11 +31,7 @@ export default function MdxLayout({
             >
                <Thumbnail />
 
-               {isProduction ? (
-                  <SyntaxHighlighter>{children}</SyntaxHighlighter>
-               ) : (
-                  children
-               )}
+               {isProduction ? <SyntaxHighlighter>{children}</SyntaxHighlighter> : children}
             </div>
          </main>
 

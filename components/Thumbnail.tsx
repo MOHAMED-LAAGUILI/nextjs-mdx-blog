@@ -15,16 +15,13 @@ export default function Thumbnail() {
       <div className="mb-10">
          {/* Post Meta */}
          <div className="mb-8">
-   
-            <h1 className="mt-4 text-4xl font-bold leading-tight md:text-5xl">
-               {post.title}
-            </h1>
+            <h1 className="mt-4 text-4xl font-bold leading-tight md:text-5xl">{post.title}</h1>
 
             <div className="mt-4 flex flex-wrap items-center gap-4 text-sm text-zinc-500 dark:text-zinc-400">
                <span>{post.author}</span>
                <span>•</span>
                <span>{post.date}</span>
-                <span>•</span>
+               <span>•</span>
                <span>{post.category}</span>
             </div>
          </div>

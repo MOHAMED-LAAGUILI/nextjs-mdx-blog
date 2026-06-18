@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
 	// Optionally, add any other Next.js config below
 };
 
-// https://www.fumadocs.dev/docs/headless/mdx
+// to add new plugins visit: https://www.fumadocs.dev/docs/headless/mdx
 const withMDX = createMDX({
 	extension: /\.(md|mdx)$/,
 });

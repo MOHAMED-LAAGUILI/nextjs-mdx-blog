@@ -1,36 +1,31 @@
-# How to Build an MDX Blog with Next.js 15
+# How to Build an MDX Blog with Next.js 16
 
-A Blog app built using Next.js 15, MDX (markdown), Prismjs and Tailwind CSS,. This app is static site that renders the markdown posts.
+A Blog app built using Next.js 16, MDX (markdown), Prismjs and Tailwind CSS 4 and ShadCN UI,. This app is static site that renders the markdown posts.
 
 ![thumbnail](./thumbnail.jpg)
 
-Youtube: [Watch](https://youtu.be/9Qd2VC0bsgQ)
 
 ## Getting Started
 
 1.  **Clone the repository:**
 
     ```bash
-    git clone https://github.com/thetechmaze/nextjs-mdx-blog.git
+    git clone https://github.com/MOHAMED-LAAGUILI/nextjs-mdx-blog.git
     ```
 
 2.  **Install Dependencies**
 
     ```bash
-    npm install
+    bun install
     ```
 
 3.  **Run the development server**
 
     ```bash
-    npm run dev
+    bun run dev
     ```
 
     Open http://localhost:3000 in your browser to see the app in action.
-
-## Deployment
-
-To Deploy this app, you can use platforms like Vercel or Netlify. Ensure you have your environment variables set correctly on the chosen platform.
 
 ## License
 
