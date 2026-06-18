@@ -1,4 +1,4 @@
-import MdxLayout from "@/components/mdx-layout";
+import MdxLayout from "@/components/layout/mdx-layout";
 
 <MdxLayout>
 
@@ -23,12 +23,18 @@ HTML5 is no longer just about structuring content. It now offers:
 - Drag and drop functionality
 
 ```html
-<!-- Example of semantic HTML5 -->
 <article>
   <header>
     <h1>Web Development Insights</h1>
-    <p>Published on <time datetime="2024-03-15">March 15, 2024</time></p>
+
+    <p>
+      Published on
+      <time datetime="2024-03-15">
+        March 15, 2024
+      </time>
+    </p>
   </header>
+
   <section>
     <p>Content goes here...</p>
   </section>
@@ -46,12 +52,15 @@ Modern CSS has evolved to include:
 - Preprocessor support (SASS, LESS)
 
 ```css
-/* Modern CSS Example */
 .responsive-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  );
   gap: 1rem;
 }
+
 ```
 
 #### JavaScript: The Powerhouse of Interactivity
@@ -63,8 +72,7 @@ JavaScript in 2024 is a robust, feature-rich language:
 - Advanced module systems
 - Strong typing with TypeScript
 
-```javascript
-// Modern JavaScript Example
+```js
 class WebDeveloper {
   constructor(name, skills = []) {
     this.name = name;
@@ -127,11 +135,11 @@ class WebDeveloper {
 
 ## Emerging Trends in Web Development
 
-1. **AI Integration**: Implementing machine learning models directly in web applications
-2. **WebAssembly**: High-performance computing in browsers
-3. **Progressive Web Apps (PWAs)**: Enhanced mobile web experiences
-4. **Serverless Architecture**: Scalable, cost-effective backend solutions
-5. **Web3 and Decentralized Technologies**: Blockchain-powered web experiences
+1. **AI Integration** — Implementing machine learning models directly in web applications.
+2. **WebAssembly** — High-performance computing in browsers.
+3. **Progressive Web Apps (PWAs)** — Enhanced mobile web experiences.
+4. **Serverless Architecture** — Scalable, cost-effective backend solutions.
+5. **Web3 and Decentralized Technologies** — Blockchain-powered web experiences.
 
 ## Conclusion: Your Web Development Journey
 
@@ -144,6 +152,6 @@ Web development is an exciting, ever-changing field. Success comes from continuo
 - Build meaningful projects
 - Never stop learning
 
-**Remember**: The best web developers are not those who know everything, but those who know how to learn continuously.
+**Remember:** The best web developers are not those who know everything, but those who know how to learn continuously.
 
 </MdxLayout>
