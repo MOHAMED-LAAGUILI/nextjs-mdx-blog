@@ -16,7 +16,7 @@ export default function PostCard({ post }: PostCardProps) {
    return (
       <Link
          href={`/blog/${post.slug}`}
-         className="group overflow-hidden rounded-2xl border border-zinc-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-zinc-800 dark:bg-zinc-900"
+         className="group overflow-hidden rounded-md border border-zinc-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-zinc-800 dark:bg-zinc-900"
       >
          <div className="relative aspect-16/10 overflow-hidden">
             <Image
@@ -36,7 +36,6 @@ export default function PostCard({ post }: PostCardProps) {
             <h3 className="mt-4 line-clamp-2 text-xl font-bold leading-snug">{post.title}</h3>
 
             <div className="mt-4 flex items-center justify-between text-sm text-zinc-500 dark:text-zinc-400">
-               <span>{post.author}</span>
                <span>{post.date}</span>
             </div>
          </div>

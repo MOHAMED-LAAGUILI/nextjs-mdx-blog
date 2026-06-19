@@ -30,9 +30,10 @@ export default function RootLayout({
       <html
          lang="en"
          className={cn("font-sans", inter.variable, notoSansHeading.variable)}
+         data-scroll-behavior="smooth"
       >
          <body
-            className={` ${work_Sans.className} antialiased max-w-7xl mx-auto`}
+            className={`${work_Sans.className} antialiased max-w-7xl mx-auto`}
             suppressHydrationWarning
          >
             <ThemeProvider

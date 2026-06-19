@@ -1,4 +1,3 @@
-import SyntaxHighlighter from "../SyntaxHighlighter";
 import Thumbnail from "../Thumbnail";
 import BackToTopButton from "./BackToTop";
 import Footer from "./Footer";
@@ -31,7 +30,7 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
             >
                <Thumbnail />
 
-               {isProduction ? <SyntaxHighlighter>{children}</SyntaxHighlighter> : children}
+               {children}
             </div>
          </main>
 
