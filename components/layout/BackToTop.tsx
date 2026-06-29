@@ -2,6 +2,7 @@
 
 import { ArrowUp } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
 
 export default function BackToTopButton() {
    const [isVisible, setIsVisible] = useState(false);
@@ -27,33 +28,14 @@ export default function BackToTopButton() {
    if (!isVisible) return null;
 
    return (
-      <button
-         type="button"
-         aria-label="Back to top"
+      <Button
+         variant="outline"
+         size="icon"
          onClick={scrollToTop}
-         className="
-  fixed
-  bottom-6
-  right-6
-  z-50
-  flex
-  h-10
-  w-10
-  items-center
-  justify-center
-  rounded-md
-  border
-  bg-foreground
-  text-background
-  shadow-lg
-  backdrop-blur
-  transition-all
-  duration-300
- 
-
-"
+         aria-label="Back to top"
+         className="fixed bottom-6 right-6 z-50 size-10 shadow-lg"
       >
-         <ArrowUp className="h-5 w-5" />
-      </button>
+         <ArrowUp className="size-5" />
+      </Button>
    );
 }

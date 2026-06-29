@@ -1,57 +1,78 @@
 "use client";
 
-import { Moon, Sun } from "lucide-react";
+import { FileText, Info } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
+import { type NavItem, navLinks } from "@/data/navigation";
+import { AnimatedThemeToggler } from "../ui/animated-theme-toggler";
 
-import { Button } from "@/components/ui/button";
+const iconMap: Record<string, typeof FileText> = {
+   FileText,
+   Info,
+};
 
-const links = [{ displayName: "Blog", herf: "/blog" }];
-
-export default function Header() {
-   const { theme, setTheme } = useTheme();
-
-   const toggleTheme = () => {
-      setTheme(theme === "light" ? "dark" : "light");
-   };
+function NavLink({ item }: { item: NavItem }) {
+   const pathname = usePathname();
+   const Icon = iconMap[item.icon] || FileText;
+   const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
 
    return (
-      <header className="sticky top-0 z-50 flex items-center justify-between border-b bg-background/80 px-5 py-6 backdrop-blur-md md:px-0">
+      <Link
+         href={item.href}
+         className={`inline-flex items-center gap-1.5 text-sm font-medium transition-colors ${
+            isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+         }`}
+      >
+         <Icon className="size-4" />
+         {item.label}
+      </Link>
+   );
+}
+
+export default function Header() {
+   const { theme } = useTheme();
+
+   return (
+      <header className="sticky top-0 z-50 flex items-center justify-between border-b bg-background/80 px-5 py-4 backdrop-blur-md md:px-8">
          <Link
             href="/"
-            className="flex items-center space-x-2"
+            className="flex items-center gap-2"
          >
             <Image
                src={theme === "light" ? "/light-union.svg" : "/dark-union.svg"}
-               width={36}
-               height={36}
+               width={32}
+               height={32}
                alt="logo"
                priority
             />
+            <span className="text-xl">
+               Meta <span className="font-bold">Blog</span>
+            </span>
          </Link>
 
-         <div className="flex items-center space-x-10">
-            <nav className="space-x-10">
-               {links.map(link => (
-                  <Link
-                     key={link.herf}
-                     href={link.herf}
-                  >
-                     {link.displayName}
-                  </Link>
-               ))}
-            </nav>
+         <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 md:flex">
+            {navLinks.map(item => (
+               <NavLink
+                  key={item.href}
+                  item={item}
+               />
+            ))}
+         </nav>
 
-            <Button
-               variant="outline"
-               size="icon"
-               onClick={toggleTheme}
-               aria-label="Toggle theme"
-            >
-               {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-            </Button>
+         <div className="flex items-center">
+            <AnimatedThemeToggler />
          </div>
+
+         <nav className="flex gap-6 md:hidden">
+            {navLinks.map(item => (
+               <NavLink
+                  key={item.href}
+                  item={item}
+               />
+            ))}
+         </nav>
       </header>
    );
 }

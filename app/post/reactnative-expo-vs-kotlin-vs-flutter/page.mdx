@@ -1,0 +1,63 @@
+import MdxLayout from "@/components/layout/mdx-layout";
+
+<MdxLayout>
+
+<br />
+
+# React Native vs Kotlin vs Flutter: Choosing Your Mobile Framework
+
+<br />
+
+## Introduction: The Mobile Development Trilemma
+
+Building a mobile application means choosing between three dominant approaches: **React Native** (with Expo), **Kotlin** (native Android), and **Flutter** (by Google). Each has strengths in different areas — development speed, performance, platform fidelity, and ecosystem maturity.
+
+<br />
+
+## React Native with Expo
+
+React Native lets you build mobile apps using JavaScript and React. Expo is a managed workflow that simplifies the development process significantly — no need to touch Android Studio or Xcode for most tasks.
+
+React Native's biggest advantage is code sharing. If you already have a React web app, you can share business logic, types, and even some components. The hot reload experience is excellent, and the ecosystem of libraries is mature.
+
+The trade-off is performance. React Native uses a JavaScript bridge to communicate with native modules, which can introduce latency for complex animations or heavy computations. The new architecture with Fabric and TurboModules addresses this but is still rolling out.
+
+<br />
+
+## Kotlin (Native Android)
+
+Kotlin is the official language for Android development. It offers full access to platform APIs, the best performance, and the most native look and feel. Jetpack Compose provides a modern declarative UI framework similar to React and Flutter.
+
+Kotlin gives you complete control over the platform. You can use any Android SDK feature immediately. Performance is unmatched because there is no bridge or intermediate layer.
+
+The trade-off is that Kotlin is Android-only. You need a separate codebase for iOS, typically using Swift or Kotlin Multiplatform Mobile. Development speed is slower compared to cross-platform frameworks.
+
+<br />
+
+## Flutter
+
+Flutter uses the Dart language and renders its own widgets using Skia, bypassing platform UI components entirely. This gives Flutter complete control over every pixel on screen, resulting in consistent designs across platforms.
+
+Flutter's hot reload is among the fastest in the industry. The widget system is comprehensive and well-designed. Performance is excellent because Flutter compiles to native ARM code.
+
+The trade-off is that Flutter apps look the same on both platforms unless you specifically implement platform-adaptive designs. App sizes are larger. The Dart ecosystem is smaller than JavaScript or Kotlin.
+
+<br />
+
+## Which One Should You Choose?
+
+Choose **React Native with Expo** if you want the fastest path to market, your team already knows React, code sharing with a web app is valuable, or you need a large ecosystem of libraries and community support.
+
+Choose **Kotlin** if you are building Android-only, you need maximum performance and platform access, or you want the most native user experience possible.
+
+Choose **Flutter** if you want consistent pixel-perfect designs across platforms, you value fast development cycles, or you are building a greenfield project without existing web code to share.
+
+<br />
+
+## Conclusion
+
+There is no single best mobile framework. React Native offers speed and code sharing. Kotlin offers performance and platform fidelity. Flutter offers design consistency and developer experience. Choose based on your team's skills, your project's requirements, and your target platforms.
+
+<br />
+
+</MdxLayout>

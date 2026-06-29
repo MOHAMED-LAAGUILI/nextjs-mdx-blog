@@ -1,0 +1,75 @@
+import MdxLayout from "@/components/layout/mdx-layout";
+
+<MdxLayout>
+
+<br />
+
+# npm vs pnpm vs bun vs yarn: Choosing a Package Manager
+
+<br />
+
+## Introduction: More Than Just Installing Packages
+
+Package managers are the backbone of JavaScript development. npm, pnpm, Yarn, and bun all install dependencies, but they differ dramatically in speed, disk usage, security, and features. The right choice can significantly impact your development workflow and CI pipeline.
+
+<br />
+
+## npm: The Standard
+
+npm comes bundled with Node.js and is the most widely used package manager. It has the largest ecosystem, the most comprehensive registry, and the deepest integration with the JavaScript ecosystem.
+
+Recent versions of npm (v7+) introduced workspaces, improved security auditing, and a lockfile format that resolves dependency trees deterministically. npm is reliable and well-understood by every JavaScript developer.
+
+The downside is speed. npm is the slowest of the four, especially on large projects or clean installs. Its node_modules structure can also lead to duplicate dependencies and large disk usage.
+
+<br />
+
+## Yarn: The Speed Pioneer
+
+Yarn was created by Meta to address npm's early performance problems. It introduced the lockfile, offline caching, and parallel installation. Yarn v2 and v3 (Berry) introduced Plug'n'Play, which eliminates node_modules entirely.
+
+Yarn is faster than npm and has excellent workspace support for monorepos. Its zero-install feature means CI pipelines can skip the install step entirely by committing cached packages.
+
+The trade-off is that Plug'n'Play can cause compatibility issues with some tools that expect a traditional node_modules structure. Yarn's ecosystem is smaller than npm's.
+
+<br />
+
+## pnpm: The Disk Saver
+
+pnpm uses a content-addressable storage system. Instead of copying files into every project's node_modules, pnpm stores packages in a global store and uses hard links. This means identical packages across projects share disk space — a massive saving for monorepos or developers with many projects.
+
+pnpm is also significantly faster than npm and Yarn v1. It enforces strict dependency isolation, preventing packages from accessing dependencies they did not explicitly declare.
+
+The trade-off is that pnpm's strictness can break tools that rely on hoisted dependencies. Most modern tools support pnpm, but some older ones may require configuration changes.
+
+<br />
+
+## bun: The All-in-One Runtime
+
+bun is not just a package manager — it is a JavaScript runtime, bundler, test runner, and package manager all in one. Its package manager is designed to be drop-in compatible with npm while being dramatically faster.
+
+bun installs dependencies by reading the lockfile, resolving everything in parallel, and writing directly to disk without intermediate steps. It is often 10 to 30 times faster than npm for clean installs.
+
+The trade-off is that bun is newer and less battle-tested. It is not yet a complete replacement for Node.js in all scenarios. Some packages may have compatibility issues. However, it is improving rapidly.
+
+<br />
+
+## Which One Should You Choose?
+
+Choose **npm** if you want the standard, most widely supported option with the largest ecosystem. It is the safest choice for teams of all sizes.
+
+Choose **pnpm** if disk space is a concern, you work on multiple projects, or you want strict dependency isolation. It is the best choice for monorepos.
+
+Choose **Yarn** if you want advanced features like Plug'n'Play and zero-install, or if your team is already comfortable with Yarn's workflow.
+
+Choose **bun** if you want the fastest possible installs, you are excited about the all-in-one runtime approach, and you are willing to work with newer, less mature tooling.
+
+<br />
+
+## Conclusion
+
+npm remains the safe default. pnpm is the disk-space champion. Yarn offers innovative features for advanced workflows. bun is the speed king and the future of JavaScript tooling. Try each and choose the one that fits your workflow best.
+
+<br />
+
+</MdxLayout>

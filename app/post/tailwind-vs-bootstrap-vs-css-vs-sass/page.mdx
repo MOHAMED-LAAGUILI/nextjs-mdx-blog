@@ -1,0 +1,91 @@
+import MdxLayout from "@/components/layout/mdx-layout";
+
+<MdxLayout>
+
+<br />
+
+# Tailwind vs Bootstrap vs CSS vs Sass/SCSS: Choosing Your Styling Approach
+
+<br />
+
+## Introduction: The Styling Spectrum
+
+Styling a web application today means choosing from a wide range of approaches — from writing vanilla CSS to using utility-first frameworks, component libraries, or CSS preprocessors. Each approach has trade-offs in speed, maintainability, file size, and team scalability.
+
+<br />
+
+## Vanilla CSS: The Foundation
+
+Vanilla CSS is the baseline — no frameworks, no tools, just plain CSS. It gives you complete control over every property and selector. Modern CSS has evolved significantly with features like custom properties (variables), container queries, nesting, and the `:has()` selector.
+
+The downside is that vanilla CSS becomes difficult to manage at scale. Naming conventions like BEM help, but large projects often end up with specificity conflicts, unused styles, and inconsistent design tokens without strict discipline.
+
+Vanilla CSS is ideal for small projects, learning, or when you need maximum performance with zero dependencies.
+
+<br />
+
+## Sass/SCSS: CSS with Superpowers
+
+Sass is a preprocessor that extends CSS with variables, nesting, mixins, functions, and partials. SCSS syntax is a superset of CSS, meaning any valid CSS file is also valid SCSS.
+
+Sass solves many of vanilla CSS's scaling problems. Variables keep design tokens consistent. Mixins reduce repetitive code. Partials let you split styles into maintainable modules. Nesting mirrors your HTML structure, reducing selector repetition.
+
+The trade-off is that Sass requires a build step. Output file size can bloat if you are not careful with mixins and extends. Modern CSS has also adopted many Sass features natively, narrowing the gap.
+
+<br />
+
+## Bootstrap: The Component Framework
+
+Bootstrap is the most popular CSS framework in the world. It provides a grid system, pre-built components (buttons, cards, modals, navbars), and utility classes. You get a consistent, responsive design system out of the box.
+
+Bootstrap excels at rapid prototyping and projects where design consistency matters more than uniqueness. It includes JavaScript components for interactive elements like dropdowns, carousels, and tooltips.
+
+The trade-off is that Bootstrap sites often look similar. Customizing Bootstrap's default theme requires overriding variables or writing additional CSS. The framework is also heavy — even with tree-shaking, you carry significant CSS for components you may not use.
+
+<br />
+
+## Tailwind CSS: Utility-First
+
+Tailwind CSS takes a fundamentally different approach. Instead of providing pre-built components, it provides low-level utility classes — `flex`, `pt-4`, `text-center`, `bg-blue-500` — that you compose directly in your HTML.
+
+Tailwind enforces design consistency through a configurable design system. You define your colors, spacing, typography, and breakpoints in a config file, and every utility class stays within those constraints. There is no way to use an arbitrary color or margin that is not in your design system.
+
+PurgeCSS is built in, meaning unused utilities are stripped from the production build. The result is often a smaller CSS file than Bootstrap or hand-written CSS.
+
+The trade-off is that HTML can look messy with many class names. There is a learning curve for the naming conventions. Teams must agree on extending the config rather than using arbitrary values.
+
+<br />
+
+## Head-to-Head Comparison
+
+**Learning curve** — Vanilla CSS is the most accessible for beginners. Bootstrap is easy to pick up with its documentation and pre-built components. Tailwind has a steeper initial learning curve but becomes intuitive quickly. Sass requires understanding its additional syntax on top of CSS.
+
+**File size** — Tailwind with PurgeCSS typically produces the smallest production CSS. Vanilla CSS can be very small if written leanly. Bootstrap is the heaviest. Sass output depends entirely on your code.
+
+**Design uniqueness** — Vanilla CSS and Tailwind give you the most control over unique designs. Bootstrap makes uniqueness harder without significant customization. Sass helps organize custom styles efficiently.
+
+**Development speed** — Bootstrap is fastest for prototyping with pre-built components. Tailwind is fast once you learn the utility classes. Vanilla CSS and Sass are slower because everything is built from scratch.
+
+**Maintainability** — Tailwind's constraint system and config file make it easy to maintain consistent designs. Bootstrap requires overriding variables or custom CSS. Vanilla CSS requires disciplined naming conventions. Sass helps with organization but does not enforce design consistency.
+
+<br />
+
+## Which One Should You Choose?
+
+Choose **Tailwind CSS** if you want a utility-first approach with a built-in design system, small production builds, and complete control over your design.
+
+Choose **Bootstrap** if you want pre-built components for rapid prototyping, you need a grid system, or your team prefers working with a component framework.
+
+Choose **Vanilla CSS** if you have a small project, you want zero dependencies, or you prefer writing everything from scratch.
+
+Choose **Sass/SCSS** if you want CSS with variables, mixins, and nesting, you already have a CSS codebase that needs better organization, or you prefer a preprocessor over a framework.
+
+<br />
+
+## Conclusion
+
+There is no single best styling approach. Tailwind offers unmatched productivity and consistency for utility-first teams. Bootstrap is ideal for rapid prototyping and component-driven development. Vanilla CSS remains the lightest, most flexible option for small projects. Sass bridges the gap between vanilla CSS and full frameworks with powerful preprocessing features. Choose the tool that matches your team's workflow and your project's requirements.
+
+<br />
+
+</MdxLayout>
