@@ -8,13 +8,13 @@ import MdxLayout from "@/components/layout/mdx-layout";
 
 <br />
 
-## Introduction: More Than Just Installing Packages
+## **1. Introduction: More Than Just Installing Packages**
 
 Package managers are the backbone of JavaScript development. npm, pnpm, Yarn, and bun all install dependencies, but they differ dramatically in speed, disk usage, security, and features. The right choice can significantly impact your development workflow and CI pipeline.
 
 <br />
 
-## npm: The Standard
+## **2. npm: The Standard**
 
 npm comes bundled with Node.js and is the most widely used package manager. It has the largest ecosystem, the most comprehensive registry, and the deepest integration with the JavaScript ecosystem.
 
@@ -24,7 +24,7 @@ The downside is speed. npm is the slowest of the four, especially on large proje
 
 <br />
 
-## Yarn: The Speed Pioneer
+## **3. Yarn: The Speed Pioneer**
 
 Yarn was created by Meta to address npm's early performance problems. It introduced the lockfile, offline caching, and parallel installation. Yarn v2 and v3 (Berry) introduced Plug'n'Play, which eliminates node_modules entirely.
 
@@ -34,7 +34,7 @@ The trade-off is that Plug'n'Play can cause compatibility issues with some tools
 
 <br />
 
-## pnpm: The Disk Saver
+## **4. pnpm: The Disk Saver**
 
 pnpm uses a content-addressable storage system. Instead of copying files into every project's node_modules, pnpm stores packages in a global store and uses hard links. This means identical packages across projects share disk space — a massive saving for monorepos or developers with many projects.
 
@@ -44,7 +44,7 @@ The trade-off is that pnpm's strictness can break tools that rely on hoisted dep
 
 <br />
 
-## bun: The All-in-One Runtime
+## **5. bun: The All-in-One Runtime**
 
 bun is not just a package manager — it is a JavaScript runtime, bundler, test runner, and package manager all in one. Its package manager is designed to be drop-in compatible with npm while being dramatically faster.
 
@@ -54,7 +54,7 @@ The trade-off is that bun is newer and less battle-tested. It is not yet a compl
 
 <br />
 
-## Which One Should You Choose?
+## **6. Which One Should You Choose?**
 
 Choose **npm** if you want the standard, most widely supported option with the largest ecosystem. It is the safest choice for teams of all sizes.
 
@@ -66,7 +66,7 @@ Choose **bun** if you want the fastest possible installs, you are excited about 
 
 <br />
 
-## Conclusion
+## **7. Conclusion**
 
 npm remains the safe default. pnpm is the disk-space champion. Yarn offers innovative features for advanced workflows. bun is the speed king and the future of JavaScript tooling. Try each and choose the one that fits your workflow best.
 

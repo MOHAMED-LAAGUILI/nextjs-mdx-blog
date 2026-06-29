@@ -1,6 +1,6 @@
 "use client";
 
-import { Calendar, Code, LayoutList, type LucideIcon, Monitor, Palette, Server, Shield, Smartphone, Sparkles, Wrench } from "lucide-react";
+import { Briefcase, Calendar, Code, LayoutList, type LucideIcon, Monitor, Palette, Server, Shield, Smartphone, Sparkles, Wrench } from "lucide-react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
@@ -16,6 +16,7 @@ const categoryIcon: Record<string, LucideIcon> = {
    Frontend: Monitor,
    Mobile: Smartphone,
    Tools: Wrench,
+   Career: Briefcase,
    TypeScript: Code,
 };
 

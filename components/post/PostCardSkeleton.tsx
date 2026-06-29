@@ -1,16 +1,18 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export default function PostCardSkeleton() {
    return (
-      <Card>
-         <Skeleton className="aspect-16/10 rounded-none rounded-t-lg" />
-         <CardContent className="space-y-3 p-5">
-            <Skeleton className="h-5 w-20 rounded-md" />
-            <Skeleton className="h-6 w-full" />
-            <Skeleton className="h-6 w-3/4" />
-            <Skeleton className="h-4 w-24" />
-         </CardContent>
+      <Card className="overflow-hidden rounded-xl border py-0">
+         <div className="relative aspect-16/10">
+            <Skeleton className="absolute inset-0 rounded-none" />
+            <div className="absolute inset-0 bg-linear-to-t from-background/60 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 space-y-1.5 bg-background/70 p-3 backdrop-blur-lg">
+               <Skeleton className="h-5 w-20 rounded-md" />
+               <Skeleton className="h-5 w-full" />
+               <Skeleton className="h-4 w-24" />
+            </div>
+         </div>
       </Card>
    );
 }

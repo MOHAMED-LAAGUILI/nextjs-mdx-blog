@@ -96,4 +96,20 @@ export const posts: IPost[] = [
       thumbnail: "/images/thumbnails/web-development.jpg",
       title: "npm vs pnpm vs bun vs Yarn: Choosing a Package Manager",
    },
+   {
+      author: "Admin",
+      category: "Career",
+      date: "2025-06-11",
+      slug: "freelance-vs-employment",
+      thumbnail: "/images/thumbnails/web-development.jpg",
+      title: "Freelance vs Employment Contract: Which Career Path Is Right for You?",
+   },
+   {
+      author: "Admin",
+      category: "Career",
+      date: "2025-06-12",
+      slug: "morocco-job-platforms",
+      thumbnail: "/images/thumbnails/web-development.jpg",
+      title: "Morocco Job Platforms: LinkedIn, Indeed, Rekrute, Maroc Annonce, and Anapec Compared",
+   },
 ];

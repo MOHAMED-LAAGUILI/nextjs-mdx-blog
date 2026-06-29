@@ -1,6 +1,6 @@
 "use client";
 
-import { Code, LayoutList, type LucideIcon, Monitor, Palette, Search, Server, Shield, Smartphone, Sparkles, Wrench } from "lucide-react";
+import { Briefcase, Code, LayoutList, type LucideIcon, Monitor, Palette, Search, Server, Shield, Smartphone, Sparkles, Wrench } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -25,6 +25,7 @@ const iconMap: Record<string, LucideIcon> = {
    Frontend: Monitor,
    Mobile: Smartphone,
    Tools: Wrench,
+   Career: Briefcase,
    TypeScript: Code,
 };
 

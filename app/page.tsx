@@ -12,7 +12,7 @@ import { Input } from "@/components/ui/input";
 import { posts } from "@/posts";
 
 const sorted = [...posts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-const latest = sorted[0];
+const latest = sorted.slice(0, 3);
 const categories = [...new Set(posts.map(p => p.category))].sort();
 
 export default function Home() {
@@ -23,12 +23,12 @@ export default function Home() {
          <Header />
 
          <main className="mx-auto max-w-7xl px-4 py-8 md:px-6">
-            <h2 className="mb-4 text-2xl font-bold">Latest Post</h2>
-            <HeroSection post={latest} />
+             <h2 className="mb-4 text-2xl font-bold">Latest 3 Posts</h2>
+            <HeroSection posts={latest} />
 
             <section>
                <SectionHeading
-                  title="Latest Posts"
+                  title="All Posts"
                   description="Discover insights, tutorials, and industry trends."
                   search={
                      <div className="relative">
