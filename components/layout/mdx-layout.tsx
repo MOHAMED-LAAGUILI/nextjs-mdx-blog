@@ -76,10 +76,10 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
             />
          )}
 
-         <main className="mx-auto max-w-6xl px-5 py-10 md:px-6">
-            <div className="flex gap-10">
-               <article
-                  className="prose prose-zinc dark:prose-invert min-w-0 flex-1 max-w-none
+          <main className="mx-auto max-w-6xl px-5 py-10 md:px-6">
+             <div className="flex flex-col gap-10 lg:flex-row">
+                <article
+                   className="prose prose-zinc dark:prose-invert min-w-0 flex-1 max-w-none
               prose-code:before:content-none prose-code:after:content-none
               prose-code:rounded prose-code:bg-zinc-100 dark:prose-code:bg-zinc-800
               prose-code:px-1.5 prose-code:py-0.5 prose-code:text-sm prose-code:font-normal
@@ -98,8 +98,8 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
                   {children}
                </article>
 
-          {headings.length > 0 && (
-            <div className="sticky top-20 w-full shrink-0 self-start lg:max-w-64">
+                  {headings.length > 0 && (
+            <div className="w-full shrink-0 self-start lg:sticky lg:top-20 lg:max-w-64">
                      <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">On this page</h4>
                      <LineNav
                         activeHref={`#${activeId}`}
