@@ -113,7 +113,7 @@ export default function CategoryTabs({ posts, categories, search = "" }: Categor
 
          {loading ? (
             <div className="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-               {Array.from({ length: PER_PAGE }).map((_, i) => (
+               {Array.from({ length: 3 }).map((_, i) => (
                   <PostCardSkeleton key={i} />
                ))}
             </div>

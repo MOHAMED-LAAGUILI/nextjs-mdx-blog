@@ -1,11 +1,12 @@
 "use client";
 
-import { FileText, Info } from "lucide-react";
+import { FileText, Info, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useTheme } from "next-themes";
+import { useState } from "react";
 import { type NavItem, navLinks } from "@/data/navigation";
+import { Button } from "@/components/ui/button";
 import { AnimatedThemeToggler } from "../ui/animated-theme-toggler";
 
 const iconMap: Record<string, typeof FileText> = {
@@ -13,7 +14,7 @@ const iconMap: Record<string, typeof FileText> = {
    Info,
 };
 
-function NavLink({ item }: { item: NavItem }) {
+function NavLink({ item, onClick }: { item: NavItem; onClick?: () => void }) {
    const pathname = usePathname();
    const Icon = iconMap[item.icon] || FileText;
    const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
@@ -21,6 +22,7 @@ function NavLink({ item }: { item: NavItem }) {
    return (
       <Link
          href={item.href}
+         onClick={onClick}
          className={`inline-flex items-center gap-1.5 text-sm font-medium transition-colors ${
             isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
          }`}
@@ -32,47 +34,58 @@ function NavLink({ item }: { item: NavItem }) {
 }
 
 export default function Header() {
-   const { theme } = useTheme();
+   const [menuOpen, setMenuOpen] = useState(false);
 
    return (
-      <header className="sticky top-0 z-50 flex items-center justify-between border-b bg-background/80 px-5 py-4 backdrop-blur-md md:px-8">
-         <Link
-            href="/"
-            className="flex items-center gap-2"
-         >
-            <Image
-               src={theme === "light" ? "/light-union.svg" : "/dark-union.svg"}
-               width={32}
-               height={32}
-               alt="logo"
-               priority
-            />
-            <span className="text-xl">
-               Meta <span className="font-bold">Blog</span>
-            </span>
-         </Link>
-
-         <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 md:flex">
-            {navLinks.map(item => (
-               <NavLink
-                  key={item.href}
-                  item={item}
+      <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-md">
+         <div className="flex items-center justify-between px-4 py-3 md:px-8 md:py-4">
+            <Link href="/" className="flex items-center gap-2">
+               <Image
+                  src={"/logo.png"}
+                  width={32}
+                  height={32}
+                  alt="logo"
+                  priority
+                  className="size-7 md:size-8"
                />
-            ))}
-         </nav>
+               <span className="hidden sm:inline md:text-xl">
+                  Meta <span className="font-bold">Blog</span>
+               </span>
+            </Link>
 
-         <div className="flex items-center">
-            <AnimatedThemeToggler />
+            <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 md:flex">
+               {navLinks.map(item => (
+                  <NavLink key={item.href} item={item} />
+               ))}
+            </nav>
+
+            <div className="flex items-center gap-2">
+               <AnimatedThemeToggler />
+               <Button
+                  variant="ghost"
+                  size="icon"
+                  className="md:hidden"
+                  onClick={() => setMenuOpen(!menuOpen)}
+                  aria-label={menuOpen ? "Close menu" : "Open menu"}
+               >
+                  {menuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
+               </Button>
+            </div>
          </div>
 
-         <nav className="flex gap-6 md:hidden">
-            {navLinks.map(item => (
-               <NavLink
-                  key={item.href}
-                  item={item}
-               />
-            ))}
-         </nav>
+         {menuOpen && (
+            <div className="border-t px-4 pb-4 md:hidden">
+               <nav className="flex flex-col gap-3 pt-3">
+                  {navLinks.map(item => (
+                     <NavLink
+                        key={item.href}
+                        item={item}
+                        onClick={() => setMenuOpen(false)}
+                     />
+                  ))}
+               </nav>
+            </div>
+         )}
       </header>
    );
 }
