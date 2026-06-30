@@ -53,9 +53,9 @@ export default function Thumbnail() {
    const Icon = categoryIcon[post.category] || LayoutList;
 
    return (
-      <div className="relative mb-10 aspect-4/3 overflow-hidden rounded-2xl md:aspect-21/9">
+      <div className="relative mb-10 aspect-4/3 overflow-hidden rounded-2xl md:aspect-21/9 bg-muted">
          <Image
-            src={post.thumbnail || "/images/hero.png"}
+            src={post.thumbnail || "/images/default.png"}
             alt={post.title}
             fill
             priority
