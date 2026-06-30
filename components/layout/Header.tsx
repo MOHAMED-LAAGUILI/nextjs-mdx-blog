@@ -5,8 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { type NavItem, navLinks } from "@/data/navigation";
 import { Button } from "@/components/ui/button";
+import { type NavItem, navLinks } from "@/data/navigation";
 import { AnimatedThemeToggler } from "../ui/animated-theme-toggler";
 
 const iconMap: Record<string, typeof FileText> = {
@@ -39,7 +39,10 @@ export default function Header() {
    return (
       <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-md">
          <div className="flex items-center justify-between px-4 py-3 md:px-8 md:py-4">
-            <Link href="/" className="flex items-center gap-2">
+            <Link
+               href="/"
+               className="flex items-center gap-2"
+            >
                <Image
                   src={"/logo.png"}
                   width={32}
@@ -55,7 +58,10 @@ export default function Header() {
 
             <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 md:flex">
                {navLinks.map(item => (
-                  <NavLink key={item.href} item={item} />
+                  <NavLink
+                     key={item.href}
+                     item={item}
+                  />
                ))}
             </nav>
 

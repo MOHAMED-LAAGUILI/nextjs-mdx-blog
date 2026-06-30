@@ -72,9 +72,7 @@ export default function TableOfContents() {
 
    return (
       <nav className="sticky top-20 hidden max-h-[calc(100vh-5rem)] w-64 shrink-0 self-start overflow-y-auto lg:block">
-         <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-            On this page
-         </h4>
+         <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">On this page</h4>
          <ul className="space-y-2.5 border-l pl-4">
             {items.map(item => (
                <li key={item.id}>
@@ -82,9 +80,7 @@ export default function TableOfContents() {
                      href={`#${item.id}`}
                      onClick={e => handleClick(e, item.id)}
                      className={`block text-sm leading-snug transition-colors ${
-                        activeId === item.id
-                           ? "font-medium text-foreground"
-                           : "text-muted-foreground hover:text-foreground"
+                        activeId === item.id ? "font-medium text-foreground" : "text-muted-foreground hover:text-foreground"
                      }`}
                   >
                      {item.text.replace(/^\d+\.\s*/, "")}

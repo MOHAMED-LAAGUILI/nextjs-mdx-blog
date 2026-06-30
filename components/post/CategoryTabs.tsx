@@ -1,6 +1,19 @@
 "use client";
 
-import { Briefcase, Code, LayoutList, type LucideIcon, Monitor, Palette, Search, Server, Shield, Smartphone, Sparkles, Wrench } from "lucide-react";
+import {
+   Briefcase,
+   Code,
+   LayoutList,
+   type LucideIcon,
+   Monitor,
+   Palette,
+   Search,
+   Server,
+   Shield,
+   Smartphone,
+   Sparkles,
+   Wrench,
+} from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -12,7 +25,7 @@ import {
    PaginationPrevious,
 } from "@/components/ui/pagination";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import type { IPost } from "@/posts";
+import type { IPost } from "@/data/posts";
 import PostCardSkeleton from "./PostCardSkeleton";
 import PostsGrid from "./PostsGrid";
 
@@ -21,11 +34,11 @@ const iconMap: Record<string, LucideIcon> = {
    All: LayoutList,
    Authentication: Shield,
    Backend: Server,
+   Career: Briefcase,
    CSS: Palette,
    Frontend: Monitor,
    Mobile: Smartphone,
    Tools: Wrench,
-   Career: Briefcase,
    TypeScript: Code,
 };
 

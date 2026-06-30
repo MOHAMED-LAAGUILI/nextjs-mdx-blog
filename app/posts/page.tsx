@@ -9,7 +9,7 @@ import CategoryTabs from "@/components/post/CategoryTabs";
 import SectionHeading from "@/components/post/SectionHeading";
 import { Input } from "@/components/ui/input";
 
-import { posts } from "@/posts";
+import { posts } from "@/data/posts";
 
 const categories = [...new Set(posts.map(p => p.category))].sort();
 

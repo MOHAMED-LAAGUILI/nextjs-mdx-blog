@@ -9,7 +9,7 @@ import HeroSection from "@/components/post/HeroSection";
 import SectionHeading from "@/components/post/SectionHeading";
 import { Input } from "@/components/ui/input";
 
-import { posts } from "@/posts";
+import { posts } from "@/data/posts";
 
 const sorted = [...posts].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 const latest = sorted.slice(0, 3);
@@ -23,7 +23,7 @@ export default function Home() {
          <Header />
 
          <main className="mx-auto max-w-7xl px-4 py-8 md:px-6">
-             <h2 className="mb-4 text-2xl font-bold">Latest 3 Posts</h2>
+            <h2 className="mb-4 text-2xl font-bold">Latest 3 Posts</h2>
             <HeroSection posts={latest} />
 
             <section>

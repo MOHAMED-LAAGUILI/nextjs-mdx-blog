@@ -27,41 +27,39 @@ function FooterNavLink({ item }: { item: NavItem }) {
 
 export default function Footer() {
    return (
-     <footer className="mt-10 border-t">
-   <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 py-4 md:px-0">
-      {/* Logo */}
-      <Link
-         href="/"
-         className="flex items-center gap-2"
-      >
-         <Image
-            src="/logo.png"
-            width={36}
-            height={36}
-            alt="Meta Blog logo"
-            priority
-         />
+      <footer className="mt-10 border-t">
+         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 py-4 md:px-0">
+            {/* Logo */}
+            <Link
+               href="/"
+               className="flex items-center gap-2"
+            >
+               <Image
+                  src="/logo.png"
+                  width={36}
+                  height={36}
+                  alt="Meta Blog logo"
+                  priority
+               />
 
-         <span className="text-2xl">
-            Meta <span className="font-bold">Blog</span>
-         </span>
-      </Link>
+               <span className="text-2xl">
+                  Meta <span className="font-bold">Blog</span>
+               </span>
+            </Link>
 
-      {/* Navigation */}
-      <nav className="flex flex-wrap items-center justify-center gap-6">
-         {navLinks.map(item => (
-            <FooterNavLink
-               key={item.href}
-               item={item}
-            />
-         ))}
-      </nav>
+            {/* Navigation */}
+            <nav className="flex flex-wrap items-center justify-center gap-6">
+               {navLinks.map(item => (
+                  <FooterNavLink
+                     key={item.href}
+                     item={item}
+                  />
+               ))}
+            </nav>
 
-      {/* Copyright */}
-      <p className="text-center text-sm text-muted-foreground">
-         © {new Date().getFullYear()} Meta Blog. All rights reserved.
-      </p>
-   </div>
-</footer>
+            {/* Copyright */}
+            <p className="text-center text-sm text-muted-foreground">© {new Date().getFullYear()} Meta Blog. All rights reserved.</p>
+         </div>
+      </footer>
    );
 }
