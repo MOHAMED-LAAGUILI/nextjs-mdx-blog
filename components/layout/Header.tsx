@@ -1,6 +1,6 @@
 "use client";
 
-import { FileText, Info, Menu, X } from "lucide-react";
+import { FileText, Home, Info, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -12,6 +12,7 @@ import { AnimatedThemeToggler } from "../ui/animated-theme-toggler";
 const iconMap: Record<string, typeof FileText> = {
    FileText,
    Info,
+   Home,
 };
 
 function NavLink({ item, onClick }: { item: NavItem; onClick?: () => void }) {
@@ -51,7 +52,7 @@ export default function Header() {
                   priority
                   className="size-7 md:size-8"
                />
-               <span className="hidden sm:inline md:text-xl">
+               <span className=" md:text-xl">
                   Meta <span className="font-bold">Blog</span>
                </span>
             </Link>

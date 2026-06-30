@@ -1,71 +1,72 @@
 import MdxLayout from "@/components/layout/mdx-layout";
+import { Spacer, Heading, Paragraph, Link, Text, MdxImage, CodeBlock } from "@/components/mdx";
 
 <MdxLayout>
 
-<br />
+<Spacer />
 
 # Morocco Job Platforms: LinkedIn, Indeed, Rekrute, Maroc Annonce, and Anapec Compared
 
-<br />
+<Spacer />
 
-## **1. Introduction: Finding a Job in Morocco**
+<Heading level={2} number="1">Introduction: Finding a Job in Morocco</Heading>
 
-The Moroccan job market has gone digital. Whether you are a fresh graduate, an experienced professional, or a developer looking for new opportunities, knowing which platforms to use can save you time and effort. Each platform serves a different niche, and understanding their strengths helps you target your job search effectively.
+<Paragraph lead>The Moroccan job market has gone digital. Whether you are a fresh graduate, an experienced professional, or a developer looking for new opportunities, knowing which platforms to use can save you time and effort. Each platform serves a different niche, and understanding their strengths helps you target your job search effectively.</Paragraph>
 
-<br />
+<Spacer />
 
-## **2. LinkedIn Jobs**
+<Heading level={2} number="2">LinkedIn Jobs</Heading>
 
 LinkedIn is the global standard for professional networking and job hunting. In Morocco, it is widely used by recruiters in tech, finance, marketing, and management. LinkedIn allows you to showcase your profile, connect with recruiters directly, and apply with one click.
 
 The platform excels for mid-to-senior level positions and remote opportunities. Its algorithm suggests relevant jobs based on your profile, and you can follow companies to stay updated on their openings. The main drawback is that entry-level positions are less common, and competition can be high for popular roles.
 
-To get started, create a strong profile at [LinkedIn Jobs](https://www.linkedin.com/jobs/).
+To get started, create a strong profile at <Link href="https://www.linkedin.com/jobs/">LinkedIn Jobs</Link>.
 
-<br />
+<Spacer />
 
-## **3. Indeed Maroc**
+<Heading level={2} number="3">Indeed Maroc</Heading>
 
 Indeed aggregates job listings from thousands of sources, including company websites and other job boards. It has a massive inventory of listings across all sectors and experience levels. The search filters are powerful, allowing you to refine by salary, contract type, and distance.
 
 Indeed is excellent for quick, broad searches. You can upload your CV once and apply to multiple positions. The platform also features company reviews and salary insights. However, some listings may be outdated, and you may encounter duplicate postings.
 
-<br />
+<Spacer />
 
-## **4. Rekrute**
+<Heading level={2} number="4">Rekrute</Heading>
 
 Rekrute is one of Morocco's leading job platforms, focused specifically on the local market. It is particularly strong for mid-level and senior positions in engineering, IT, finance, and sales. Many Moroccan companies, including multinationals operating in Morocco, post exclusively on Rekrute.
 
 The platform offers CV storage, job alerts, and direct application tracking. It also features career advice articles and company profiles. Rekrute's interface is straightforward, and its focus on the Moroccan market means fewer irrelevant international listings.
 
-Visit [Rekrute.ma](https://www.rekrute.ma/) to browse current openings.
+Visit <Link href="https://www.rekrute.ma/">Rekrute.ma</Link> to browse current openings.
 
-<br />
+<Spacer />
 
-## **5. Maroc Annonce**
+<Heading level={2} number="5">Maroc Annonce</Heading>
 
 Maroc Annonce is a general classifieds platform that includes a dedicated jobs section. It is less structured than dedicated job boards, but it is useful for finding opportunities with small businesses, local shops, and informal sectors.
 
 The job listings on Maroc Annonce tend to be more varied — ranging from formal corporate roles to part-time gigs and freelance contracts. The platform is free to use and does not require a professional profile. However, listings can be less detailed, and you should exercise caution when applying to ensure legitimacy.
 
-<br />
+<Spacer />
 
-## **6. Anapec Offres**
+<Heading level={2} number="6">Anapec Offres</Heading>
 
 Anapec (Agence Nationale de Promotion de l'Emploi et des Compétences) is the official government employment agency in Morocco. Their platform, Anapec Offres, lists verified job opportunities from companies that are legally required to declare vacancies.
 
 Anapec is particularly valuable for entry-level candidates and those seeking stable, formal employment. The platform offers additional services like training programs, career counseling, and recruitment workshops. The application process can be slower than private platforms, but listings are reliable and legally compliant.
 
-![Anapec Logo](/images/thumbnails/web-development.jpg)
+<MdxImage src="/images/thumbnails/web-development.jpg" alt="Anapec Logo" />
 
-<br />
+<Spacer />
 
-## **7. Scraping Job Listings with Python**
+<Heading level={2} number="7">Scraping Job Listings with Python</Heading>
 
 If you are a developer, you can automate your job search by scraping listings from multiple platforms. Here is a simple example using Python:
 
-```python
-import requests
+<CodeBlock language="python">
+{`import requests
 from bs4 import BeautifulSoup
 
 def scrape_jobs(url):
@@ -82,33 +83,33 @@ def scrape_jobs(url):
 url = "https://example.com/jobs"
 results = scrape_jobs(url)
 for job in results:
-    print(f"{job['title']} at {job['company']}")
-```
+    print(f"{job['title']} at {job['company']}")`}
+</CodeBlock>
 
-Always check the platform's terms of service and `robots.txt` before scraping.
+Always check the platform's terms of service and <Text code>robots.txt</Text> before scraping.
 
-<br />
+<Spacer />
 
-## **8. Other Notable Platforms**
+<Heading level={2} number="8">Other Notable Platforms</Heading>
 
-Several other platforms serve specific niches in Morocco. [Emploi.ma](https://www.emploi.ma/) is another popular local job board with a broad range of listings. [Bayt.com](https://www.bayt.com/) has a strong presence across the MENA region, including Morocco, and is good for Arabic-speaking roles. **Facebook Groups** dedicated to Moroccan job seekers can also be surprisingly effective, especially for freelance and remote opportunities.
+Several other platforms serve specific niches in Morocco. <Link href="https://www.emploi.ma/">Emploi.ma</Link> is another popular local job board with a broad range of listings. <Link href="https://www.bayt.com/">Bayt.com</Link> has a strong presence across the MENA region, including Morocco, and is good for Arabic-speaking roles. **Facebook Groups** dedicated to Moroccan job seekers can also be surprisingly effective, especially for freelance and remote opportunities.
 
-Specialized tech platforms like [HackerNews Who is Hiring](https://news.ycombinator.com/) and [RemoteOK](https://remoteok.com/) are worth checking if you are a developer targeting remote or international roles from Morocco.
+Specialized tech platforms like <Link href="https://news.ycombinator.com/">HackerNews Who is Hiring</Link> and <Link href="https://remoteok.com/">RemoteOK</Link> are worth checking if you are a developer targeting remote or international roles from Morocco.
 
-<br />
+<Spacer />
 
-## **9. Which Platform Should You Use?**
+<Heading level={2} number="9">Which Platform Should You Use?</Heading>
 
 Use **LinkedIn** for professional networking, senior roles, and remote positions. Use **Indeed** for broad, quick searches across all sectors. Use **Rekrute** for quality mid-to-senior local positions. Use **Maroc Annonce** for informal and small-business opportunities. Use **Anapec** for entry-level and government-verified roles.
 
 The best strategy is to maintain a presence on multiple platforms and tailor your approach based on the type of role you are seeking.
 
-<br />
+<Spacer />
 
-## **10. Conclusion**
+<Heading level={2} number="10">Conclusion</Heading>
 
 Morocco's job platform landscape offers something for every career stage and industry. By understanding the strengths of LinkedIn, Indeed, Rekrute, Maroc Annonce, Anapec, and others, you can build a targeted job search strategy that maximizes your chances of finding the right opportunity.
 
-<br />
+<Spacer />
 
 </MdxLayout>

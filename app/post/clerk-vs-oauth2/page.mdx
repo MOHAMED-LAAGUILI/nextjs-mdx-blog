@@ -1,71 +1,72 @@
 import MdxLayout from "@/components/layout/mdx-layout";
+import { Spacer, Heading, Paragraph } from "@/components/mdx";
 
 <MdxLayout>
 
-<br />
+<Spacer />
 
 # Clerk vs OAuth 2.0: Authentication Approaches Compared
 
-<br />
+<Spacer />
 
-## **1. Introduction: The Authentication Dilemma**
+<Heading level={2} number="1">Introduction: The Authentication Dilemma</Heading>
 
-Authentication is one of the most critical and complex parts of any application. Two common approaches are using a managed auth service like **Clerk** or implementing **OAuth 2.0** yourself. Each has trade-offs in development speed, control, security, and maintenance.
+<Paragraph lead>Authentication is one of the most critical and complex parts of any application. Two common approaches are using a managed auth service like **Clerk** or implementing **OAuth 2.0** yourself. Each has trade-offs in development speed, control, security, and maintenance.</Paragraph>
 
-<br />
+<Spacer />
 
-## **2. What Is Clerk?**
+<Heading level={2} number="2">What Is Clerk?</Heading>
 
 Clerk is a fully managed authentication and user management platform. It provides pre-built sign-in and sign-up components, social login, multi-factor authentication, session management, and user profiles — all with minimal code. Clerk integrates seamlessly with Next.js, React, and other frameworks through dedicated SDKs.
 
 With Clerk, you do not need to design auth flows, manage tokens, store passwords, or handle session rotation. You drop in their components, configure your providers, and you are done.
 
-<br />
+<Spacer />
 
-## **3. What Is OAuth 2.0?**
+<Heading level={2} number="3">What Is OAuth 2.0?</Heading>
 
 OAuth 2.0 is an authorization framework that enables third-party applications to obtain limited access to user accounts. Implementing OAuth 2.0 yourself means handling the entire flow — redirecting users to the provider, receiving authorization codes, exchanging them for tokens, refreshing tokens, and managing sessions.
 
 This gives you complete control over the authentication experience and avoids dependence on third-party services. However, it requires deep understanding of security best practices, token storage, CSRF protection, and more.
 
-<br />
+<Spacer />
 
-## **4. Development Speed**
+<Heading level={2} number="4">Development Speed</Heading>
 
 Clerk wins on speed. You can add authentication to a new application in minutes. Pre-built UI components, email templates, and dashboard for managing users remove weeks of development work.
 
 Implementing OAuth 2.0 yourself takes significantly longer. You need to handle multiple providers, build UI, manage database schemas for users and sessions, implement token refresh logic, and ensure everything is secure.
 
-<br />
+<Spacer />
 
-## **5. Control and Customization**
+<Heading level={2} number="5">Control and Customization</Heading>
 
 OAuth 2.0 gives you full control. You decide the UI, the flow, the data you collect, and how sessions work. There is no third-party dependency, no downtime risk from an external service, and no pricing changes that could affect your application.
 
 Clerk offers good customization options but you are limited to what their platform provides. You depend on their uptime, their pricing, and their roadmap.
 
-<br />
+<Spacer />
 
-## **6. Security and Compliance**
+<Heading level={2} number="6">Security and Compliance</Heading>
 
 Clerk handles security best practices for you — password hashing, session management, MFA, and breach detection. Their team focuses exclusively on auth security, which means they are likely more secure than a custom implementation for most teams.
 
 Implementing OAuth 2.0 yourself puts the security burden on your team. Mistakes in token handling, CSRF protection, or session management can lead to vulnerabilities. For teams without deep security expertise, this is a significant risk.
 
-<br />
+<Spacer />
 
-## **7. Which One Should You Choose?**
+<Heading level={2} number="7">Which One Should You Choose?</Heading>
 
 Choose **Clerk** if you want to ship authentication quickly, you prefer managed security and compliance, you want pre-built UI components, and you are building an application where time to market matters.
 
 Choose **OAuth 2.0** if you need complete control over the auth experience, you cannot depend on third-party services, you have the security expertise to implement it correctly, or your compliance requirements prevent using external auth providers.
 
-<br />
+<Spacer />
 
-## **8. Conclusion**
+<Heading level={2} number="8">Conclusion</Heading>
 
 Clerk and OAuth 2.0 represent different trade-offs between speed and control. Clerk gets you to market fast with enterprise-grade security out of the box. OAuth 2.0 gives you total ownership at the cost of significant development and maintenance effort. Choose based on your team's resources and requirements.
 
-<br />
+<Spacer />
 
 </MdxLayout>

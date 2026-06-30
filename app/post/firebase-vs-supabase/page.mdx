@@ -1,63 +1,64 @@
 import MdxLayout from "@/components/layout/mdx-layout";
+import { Spacer, Heading, Paragraph } from "@/components/mdx";
 
 <MdxLayout>
 
-<br />
+<Spacer />
 
 # Firebase vs Supabase: Choosing Your Backend Platform
 
-<br />
+<Spacer />
 
-## **1. Introduction: The BaaS Revolution**
+<Heading level={2} number="1">Introduction: The BaaS Revolution</Heading>
 
-Backend-as-a-Service platforms have made it possible to build full-featured applications without managing servers. **Firebase** (Google) and **Supabase** (open-source) are the two leading contenders. While they serve the same purpose, their architectures and philosophies differ significantly.
+<Paragraph lead>Backend-as-a-Service platforms have made it possible to build full-featured applications without managing servers. **Firebase** (Google) and **Supabase** (open-source) are the two leading contenders. While they serve the same purpose, their architectures and philosophies differ significantly.</Paragraph>
 
-<br />
+<Spacer />
 
-## **2. Database: NoSQL vs SQL**
+<Heading level={2} number="2">Database: NoSQL vs SQL</Heading>
 
 Firebase uses Firestore, a NoSQL document database. Data is stored in collections and documents, making it flexible and easy to get started. Queries are limited compared to SQL, and complex relational data can be difficult to model efficiently.
 
 Supabase is built on PostgreSQL, a powerful relational database. You get full SQL capabilities, joins, aggregations, foreign keys, and transactions. Supabase also provides a REST API and real-time subscriptions on top of PostgreSQL automatically.
 
-<br />
+<Spacer />
 
-## **3. Authentication**
+<Heading level={2} number="3">Authentication</Heading>
 
 Both platforms offer robust authentication. Firebase Authentication supports email and password, social providers, phone auth, and anonymous auth. It is mature and widely used.
 
 Supabase Auth also supports email and password, social providers, and phone auth. Because it is built on PostgreSQL, it integrates directly with Row-Level Security policies, making it easy to control data access at the database level.
 
-<br />
+<Spacer />
 
-## **4. Real-Time Features**
+<Heading level={2} number="4">Real-Time Features</Heading>
 
 Firebase has industry-leading real-time capabilities through Firestore's real-time listeners. Changes to documents are pushed to connected clients instantly with minimal setup.
 
 Supabase offers real-time subscriptions through its Realtime server, which listens to PostgreSQL replication events. It is powerful but requires more configuration than Firebase for complex real-time scenarios.
 
-<br />
+<Spacer />
 
-## **5. Pricing and Vendor Lock-In**
+<Heading level={2} number="5">Pricing and Vendor Lock-In</Heading>
 
 Firebase has a generous free tier but can become expensive at scale, especially for Firestore reads and writes. It is a proprietary Google Cloud service, making migration difficult.
 
 Supabase is open-source. You can use their hosted service or self-host on your own infrastructure. The free tier is generous, and because everything runs on standard PostgreSQL, migrating away is straightforward.
 
-<br />
+<Spacer />
 
-## **6. Which One Should You Choose?**
+<Heading level={2} number="6">Which One Should You Choose?</Heading>
 
 Choose **Firebase** if you want the fastest path to a working prototype, your data model is simple and document-oriented, real-time features are critical, and you are comfortable within the Google Cloud ecosystem.
 
 Choose **Supabase** if you need relational data with full SQL power, you value open-source software and portability, you want fine-grained access control through PostgreSQL policies, or you prefer to self-host.
 
-<br />
+<Spacer />
 
-## **7. Conclusion**
+<Heading level={2} number="7">Conclusion</Heading>
 
 Firebase and Supabase are both excellent platforms. Firebase offers unmatched speed to market for simple applications and real-time use cases. Supabase offers the power, flexibility, and portability of open-source PostgreSQL. Your choice should be driven by your data model and your values around vendor lock-in.
 
-<br />
+<Spacer />
 
 </MdxLayout>

@@ -148,30 +148,7 @@
 		border: 1px solid var(--color-border);
 		box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
 	}
-	.prose pre {
-		position: relative;
-		background: #1e1e1e !important;
-		color: #d4d4d4;
-		border: 1px solid rgba(113, 113, 122, 0.3);
-		border-radius: 0.5rem;
-		padding: 1.25rem;
-		padding-top: 2.5rem;
-		font-size: 0.875rem;
-		line-height: 1.625;
-		box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-		overflow-x: auto;
-	}
-	.prose pre::before {
-		content: "";
-		position: absolute;
-		top: 0.75rem;
-		left: 1rem;
-		width: 0.75rem;
-		height: 0.75rem;
-		border-radius: 9999px;
-		background: #ff5f57;
-		box-shadow: 1.25rem 0 0 0 #febc2e, 2.5rem 0 0 0 #28c840;
-	}
+
 }
 
 ::view-transition-old(root), ::view-transition-new(root) {

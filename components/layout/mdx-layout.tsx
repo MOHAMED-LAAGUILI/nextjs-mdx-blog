@@ -1,9 +1,11 @@
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 import RelatedPosts from "../post/RelatedPosts";
 import TableOfContents from "../post/TableOfContents";
 import Thumbnail from "../post/Thumbnail";
-import BackToTopButton from "./BackToTop";
 import Footer from "./Footer";
 import Header from "./Header";
+import { BackToTop } from "./BackToTop";
 
 export default function MdxLayout({ children }: { children: React.ReactNode }) {
    return (
@@ -19,6 +21,14 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
                      prose-code:px-1.5 prose-code:py-0.5 prose-code:text-sm prose-code:font-normal
                   "
                >
+                  <Link
+                     href="/"
+                     className="mb-6 flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                     <ArrowLeft className="size-4" />
+                     Back to home
+                  </Link>
+
                   <Thumbnail />
 
                   {children}
@@ -30,7 +40,7 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
             <RelatedPosts />
          </main>
 
-         <BackToTopButton />
+         <BackToTop />
          <Footer />
       </div>
    );

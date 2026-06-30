@@ -1,59 +1,60 @@
 import MdxLayout from "@/components/layout/mdx-layout";
+import { Spacer, Heading, Paragraph } from "@/components/mdx";
 
 <MdxLayout>
 
-<br />
+<Spacer />
 
 # React vs Next.js: Understanding the Difference
 
-<br />
+<Spacer />
 
-## **1. Introduction: Library vs Framework**
+<Heading level={2} number="1">Introduction: Library vs Framework</Heading>
 
-One of the most common points of confusion for new developers is the relationship between **React** and **Next.js**. They are not competitors — Next.js is built on top of React. Understanding what each provides and when to use which is essential for making the right architectural decisions.
+<Paragraph lead>One of the most common points of confusion for new developers is the relationship between **React** and **Next.js**. They are not competitors — Next.js is built on top of React. Understanding what each provides and when to use which is essential for making the right architectural decisions.</Paragraph>
 
-<br />
+<Spacer />
 
-## **2. What Is React?**
+<Heading level={2} number="2">What Is React?</Heading>
 
 React is a JavaScript library for building user interfaces. It provides a component-based architecture, a virtual DOM for efficient rendering, and tools for managing state and side effects. React itself handles only the view layer — it does not prescribe how to handle routing, data fetching, bundling, or server-side rendering.
 
 Building a production application with React alone requires assembling a stack of additional tools: a bundler (Vite or Webpack), a router (React Router), a data-fetching solution, and configuration for code splitting and performance optimization.
 
-<br />
+<Spacer />
 
-## **3. What Is Next.js?**
+<Heading level={2} number="3">What Is Next.js?</Heading>
 
 Next.js is a full-stack React framework built by Vercel. It extends React with powerful conventions and built-in features. Next.js provides file-based routing, server-side rendering, static site generation, API routes, image optimization, middleware, and more — all out of the box.
 
 With Next.js, you can build everything from static marketing sites to fully dynamic web applications without needing to configure additional tools. It is opinionated in the best way — it makes the right decisions for you.
 
-<br />
+<Spacer />
 
-## **4. Key Differences**
+<Heading level={2} number="4">Key Differences</Heading>
 
 React gives you complete freedom to choose your tools and architecture. This is ideal when you need fine-grained control or are building a highly custom application. The trade-off is that you must make many decisions and maintain more configuration.
 
 Next.js gives you a structured, optimized foundation. You trade some freedom for productivity and built-in best practices. Features like server components, streaming, and automatic code splitting are available without any setup.
 
-<br />
+<Spacer />
 
-## **5. When to Use React Alone**
+<Heading level={2} number="5">When to Use React Alone</Heading>
 
 Choose plain React when you are building a highly interactive single-page application that does not need server-side rendering, you need maximum control over your build configuration, or you are embedding React into an existing application. React is also ideal for building component libraries or mobile apps with React Native.
 
-<br />
+<Spacer />
 
-## **6. When to Use Next.js**
+<Heading level={2} number="6">When to Use Next.js</Heading>
 
 Choose Next.js when you need server-side rendering or static generation for better SEO and performance, you want file-based routing to simplify navigation, you need API routes to build a backend alongside your frontend, or you want automatic optimizations for images, fonts, and scripts. Next.js is the default choice for most new web projects.
 
-<br />
+<Spacer />
 
-## **7. Conclusion**
+<Heading level={2} number="7">Conclusion</Heading>
 
 React and Next.js are not an either-or decision. Next.js is React with superpowers. If you are starting a new web project, there is almost no reason to use plain React over Next.js. If you need React outside the web — in React Native, or as a library within an existing system — plain React is the right choice.
 
-<br />
+<Spacer />
 
 </MdxLayout>

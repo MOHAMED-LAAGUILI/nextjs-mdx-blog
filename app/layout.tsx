@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Inter, Noto_Sans, Work_Sans } from "next/font/google";
 import "./globals.css";
-import BackToTopButton from "@/components/layout/BackToTop";
 import Preloader from "@/components/layout/Preloader";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/providers/ThemeProvider";
+import { BackToTop } from "@/components/layout/BackToTop";
 
 const notoSansHeading = Noto_Sans({
    subsets: ["latin"],
@@ -46,7 +46,7 @@ export default function RootLayout({
                disableTransitionOnChange
             >
                {children}
-               <BackToTopButton />
+               <BackToTop />
             </ThemeProvider>
          </body>
       </html>
