@@ -1,4 +1,4 @@
-import type { IPost } from "@/data/posts";
+import type { IPost } from "@/types/post";
 import PostCard from "./PostCard";
 
 interface HeroSectionProps {

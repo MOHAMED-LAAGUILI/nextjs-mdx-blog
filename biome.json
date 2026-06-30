@@ -15,11 +15,10 @@
   "files": {
     "ignoreUnknown": true,
     "includes": [
-      "app/**/*.{ts,tsx,js,jsx}",
-      "components/**/*.{ts,tsx,js,jsx}",
-      "lib/**/*.{ts,tsx,js,jsx}",
-      "mdx-components.tsx",
-      "posts.ts"
+      "app/**/*.{ts,tsx,js,jsx,mdx}",
+      "components/**/*.{ts,tsx,js,jsx,mdx}",
+      "lib/**/*.{ts,tsx,js,jsx,mdx}",
+      "mdx-components.tsx"
     ]
   },
 

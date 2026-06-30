@@ -2,7 +2,8 @@
 
 import { usePathname } from "next/navigation";
 import PostCard from "@/components/post/PostCard";
-import { type IPost, posts } from "@/data/posts";
+import { posts } from "@/data/posts";
+import type { IPost } from "@/types/post";
 
 export default function RelatedPosts() {
    const slug = usePathname().split("/").pop();

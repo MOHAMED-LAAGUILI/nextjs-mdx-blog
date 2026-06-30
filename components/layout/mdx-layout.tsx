@@ -8,10 +8,11 @@ import { useEffect, useState } from "react";
 import { posts } from "@/data/posts";
 import RelatedPosts from "../post/RelatedPosts";
 import Thumbnail from "../post/Thumbnail";
+import { LineNav } from "../ui/line-nav";
 import { BackToTop } from "./BackToTop";
 import Footer from "./Footer";
 import Header from "./Header";
-import { LineNav } from "../line-nav";
+
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mo-blog-rose.vercel.app";
 
 export default function MdxLayout({ children }: { children: React.ReactNode }) {
@@ -70,7 +71,7 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
                url={`${BASE_URL}/post/${post.slug}`}
                datePublished={new Date(post.date).toISOString()}
                author={{ "@type": "Person", name: post.author }}
-               image={`${BASE_URL}${post.thumbnail}`}
+               image={`${BASE_URL}/${post.thumbnail}`}
                description={`Read about ${post.title} on Meta Blog.`}
             />
          )}

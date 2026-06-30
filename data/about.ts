@@ -1,13 +1,5 @@
-export interface SocialLink {
-   label: string;
-   url: string;
-   icon: string;
-}
+import { SocialLink } from "@/types/about";
 
-export interface Skill {
-   label: string;
-   icon: string;
-}
 
 export const aboutData = {
    name: "Mohamed Laaguili",
@@ -17,12 +9,7 @@ export const aboutData = {
    avatarFallback: "ML",
    location: "Remote",
    bio: "Passionate about building clean, performant web applications and sharing knowledge with the developer community. I write comparison articles to help developers make informed technology choices.",
-   skills: [
-      { label: "React", icon: "Code" },
-      { label: "Next.js", icon: "Code" },
-      { label: "TypeScript", icon: "Terminal" },
-      { label: "Node.js", icon: "Terminal" },
-   ] as Skill[],
+
    socials: [
       { label: "GitHub", url: "https://github.com/MOHAMED-LAAGUILI", icon: "Terminal" },
       { label: "LinkedIn", url: "https://www.linkedin.com/in/mohamedlaaguili2001", icon: "ExternalLink" },

@@ -1,14 +1,11 @@
 "use client";
 
-import { FileText, Home, Info } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { type NavItem, navLinks } from "@/data/navigation";
-
 export default function Footer() {
    return (
-      <footer className="mt-10 border-t">
+      <footer className="mt-10 border-t relative right-0 bottom-0 left-0 z-50">
          <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-5 py-4 md:px-0">
             {/* Logo */}
             <Link

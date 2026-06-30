@@ -1,15 +1,17 @@
 "use client";
 
-import { FileText, Home, Info, Menu, X } from "lucide-react";
+import { CircleX, FileText, Home, Info, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { type NavItem, navLinks } from "@/data/navigation";
+import { navLinks } from "@/data/navigation";
+import { NavItem } from "@/types/navigation";
 import { AnimatedThemeToggler } from "../ui/animated-theme-toggler";
 
 const iconMap: Record<string, typeof FileText> = {
+   CircleX,
    FileText,
    Home,
    Info,

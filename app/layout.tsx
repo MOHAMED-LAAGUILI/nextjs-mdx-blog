@@ -3,6 +3,7 @@ import { Inter, Noto_Sans, Work_Sans } from "next/font/google";
 import "./globals.css";
 import { BackToTop } from "@/components/layout/BackToTop";
 import Preloader from "@/components/layout/Preloader";
+import { getMetaInfo } from "@/data/meta";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 
@@ -17,43 +18,91 @@ const work_Sans = Work_Sans({
    subsets: ["latin"],
 });
 
-const BASE_URL = "https://meta-blog.vercel.app";
+const metaInfo = getMetaInfo();
 
 export const viewport: Viewport = {
+   colorScheme: "dark light",
    initialScale: 1,
+   maximumScale: 5,
    themeColor: [
       { color: "#ffffff", media: "(prefers-color-scheme: light)" },
-      { color: "#0a0a0a", media: "(prefers-color-scheme: dark)" },
+      { color: "#09090b", media: "(prefers-color-scheme: dark)" },
    ],
+   viewportFit: "cover",
    width: "device-width",
 };
 
 export const metadata: Metadata = {
-   alternates: { canonical: BASE_URL },
-   authors: [{ name: "Meta Blog" }],
-   creator: "Meta Blog",
-   description: "A modern blog covering web development, TypeScript, React, Next.js, tools, career insights, and tech comparisons.",
-   keywords: ["web development", "blog", "next.js", "react", "typescript", "tutorial", "tech"],
-   metadataBase: new URL(BASE_URL),
-   openGraph: {
-      description: "A modern blog covering web development, TypeScript, React, Next.js, tools, career insights, and tech comparisons.",
-      images: [{ height: 630, url: "/logo.png", width: 1200 }],
-      locale: "en_US",
-      siteName: "Meta Blog",
-      title: "Meta Blog — Web Development & Tech Insights",
-      type: "website",
-      url: BASE_URL,
+   alternates: { canonical: metaInfo.url },
+   appleWebApp: {
+      capable: true,
+      statusBarStyle: "default",
+      title: "Meta Blog",
    },
-   robots: { follow: true, index: true },
+   applicationName: metaInfo.title,
+   authors: [{ name: metaInfo.author, url: metaInfo.url }],
+   creator: metaInfo.author,
+   description: metaInfo.description,
+   formatDetection: {
+      address: false,
+      email: false,
+      telephone: false,
+   },
+   generator: metaInfo.generator,
+   icons: {
+      apple: metaInfo.favicons.appleTouchIcon,
+      icon: metaInfo.favicons.icon,
+      other: {
+         rel: "mask-icon",
+         url: metaInfo.favicons.maskIcon,
+      },
+      shortcut: metaInfo.favicons.icon,
+   },
+   keywords: metaInfo.keywords,
+   metadataBase: new URL(metaInfo.url),
+   openGraph: {
+      description: metaInfo.description,
+      images: [
+         {
+            alt: metaInfo.title,
+            height: metaInfo.og.imageHeight,
+            url: metaInfo.og.image,
+            width: metaInfo.og.imageWidth,
+         },
+      ],
+      locale: metaInfo.og.locale,
+      siteName: metaInfo.title,
+      title: metaInfo.title,
+      type: "website",
+      url: metaInfo.url,
+   },
+   publisher: metaInfo.author,
+   robots: {
+      follow: true,
+      googleBot: {
+         follow: true,
+         index: true,
+         "max-image-preview": "large",
+         "max-snippet": -1,
+         "max-video-preview": -1,
+      },
+      index: true,
+      nocache: false,
+   },
    title: {
-      default: "Meta Blog — Web Development & Tech Insights",
-      template: "%s | Meta Blog",
+      default: metaInfo.title,
+      template: `%s | ${metaInfo.title.split(" — ")[0]}`,
    },
    twitter: {
       card: "summary_large_image",
-      description: "A modern blog covering web development, TypeScript, React, Next.js, tools, career insights, and tech comparisons.",
-      images: ["/logo.png"],
-      title: "Meta Blog — Web Development & Tech Insights",
+      creator: metaInfo.twitter.creator,
+      description: metaInfo.description,
+      images: [metaInfo.twitter.image],
+      site: metaInfo.twitter.site,
+      title: metaInfo.title,
+   },
+   verification: {
+      google: metaInfo.googleSiteVerification,
    },
 };
 

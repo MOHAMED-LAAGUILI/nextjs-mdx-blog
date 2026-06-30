@@ -1,11 +1,5 @@
-export interface IPost {
-   title: string;
-   slug: string;
-   date: string;
-   category: string;
-   thumbnail: string;
-   author: string;
-}
+import { IPost } from "@/types/post";
+
 
 export const posts: IPost[] = [
    {

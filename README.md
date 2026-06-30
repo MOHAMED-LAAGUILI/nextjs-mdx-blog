@@ -2,7 +2,6 @@
 
 A Blog app built using Next.js 16, MDX (markdown), Prismjs and Tailwind CSS 4 and ShadCN UI,. This app is static site that renders the markdown posts.
 
-![thumbnail](./thumbnail.jpg)
 
 
 ## Getting Started
