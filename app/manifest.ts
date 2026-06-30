@@ -1,23 +1,18 @@
 import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
-   return {
-      background_color: "#ffffff",
-      description: "A modern blog built with Next.js, featuring articles on web development, tools, and career insights.",
-      display: "standalone",
-      icons: [
-         { sizes: "32x32", src: "/logo.png", type: "image/png" },
-         { sizes: "192x192", src: "/logo.png", type: "image/png" },
-         { sizes: "512x512", src: "/logo.png", type: "image/png" },
-         {
-            sizes: "any",
-            src: "/favicon.ico",
-            type: "image/x-icon",
-         },
-      ],
-      name: "Meta Blog 0",
-      short_name: "MetaBlog0",
-      start_url: "/",
-      theme_color: "#0a0a0a",
-   };
+  return {
+    name: "Meta Blog",
+    short_name: "MetaBlog",
+    description: "A modern blog covering web development, TypeScript, React, Next.js, tools, and career insights.",
+    start_url: "/",
+    display: "standalone",
+    background_color: "#ffffff",
+    theme_color: "#0a0a0a",
+    icons: [
+      { src: "/logo.png", sizes: "192x192", type: "image/png" },
+      { src: "/logo.png", sizes: "512x512", type: "image/png" },
+      { src: "/logo.png", sizes: "192x192", type: "image/png", purpose: "maskable" },
+    ],
+  };
 }

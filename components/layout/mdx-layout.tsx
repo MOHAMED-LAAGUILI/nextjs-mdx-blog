@@ -100,7 +100,7 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
 
                   {headings.length > 0 && (
             <div className="w-full shrink-0 self-start lg:sticky lg:top-20 lg:max-w-64">
-                     <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">On this page</h4>
+                     <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">On this page</h4>
                      <LineNav
                         activeHref={`#${activeId}`}
                         items={headings.map(h => ({

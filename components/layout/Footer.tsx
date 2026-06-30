@@ -6,25 +6,7 @@ import Link from "next/link";
 
 import { type NavItem, navLinks } from "@/data/navigation";
 
-const iconMap: Record<string, typeof FileText> = {
-   FileText,
-   Home,
-   Info,
-};
 
-function FooterNavLink({ item }: { item: NavItem }) {
-   const Icon = iconMap[item.icon] || FileText;
-
-   return (
-      <Link
-         href={item.href}
-         className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground"
-      >
-         <Icon className="size-4" />
-         {item.label}
-      </Link>
-   );
-}
 
 export default function Footer() {
    return (
@@ -48,15 +30,7 @@ export default function Footer() {
                </span>
             </Link>
 
-            {/* Navigation */}
-            <nav className="flex flex-wrap items-center justify-center gap-6">
-               {navLinks.map(item => (
-                  <FooterNavLink
-                     key={item.href}
-                     item={item}
-                  />
-               ))}
-            </nav>
+          
 
             {/* Copyright */}
             <p className="text-center text-sm text-muted-foreground">© {new Date().getFullYear()} Meta Blog. All rights reserved.</p>

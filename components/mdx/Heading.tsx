@@ -10,7 +10,7 @@ export default function Heading({ level = 2, number, children }: { level?: 1 | 2
 
    const content = (
       <>
-         {number && <span className="text-primary/60">{number}. </span>}
+         {number && <span className="text-primary">{number}. </span>}
          {children}
       </>
    );

@@ -68,12 +68,6 @@ export default function RootLayout({
          className={cn("font-sans", inter.variable, notoSansHeading.variable)}
          data-scroll-behavior="smooth"
       >
-         <head>
-            <link
-               rel="manifest"
-               href="/manifest.webmanifest"
-            />
-         </head>
          <body
             className={`${work_Sans.className} antialiased max-w-7xl mx-auto min-h-screen`}
             suppressHydrationWarning

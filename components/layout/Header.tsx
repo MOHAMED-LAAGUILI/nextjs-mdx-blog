@@ -25,7 +25,7 @@ function NavLink({ item, onClick }: { item: NavItem; onClick?: () => void }) {
          href={item.href}
          onClick={onClick}
          className={`inline-flex items-center gap-1.5 text-sm font-medium transition-colors ${
-            isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+            isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"
          }`}
       >
          <Icon className="size-4" />
