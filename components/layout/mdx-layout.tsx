@@ -6,13 +6,12 @@ import { usePathname } from "next/navigation";
 import { ArticleJsonLd } from "next-seo";
 import { useEffect, useState } from "react";
 import { posts } from "@/data/posts";
-import { LineNav } from "../line-nav";
 import RelatedPosts from "../post/RelatedPosts";
 import Thumbnail from "../post/Thumbnail";
 import { BackToTop } from "./BackToTop";
 import Footer from "./Footer";
 import Header from "./Header";
-
+import { LineNav } from "../line-nav";
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mo-blog-rose.vercel.app";
 
 export default function MdxLayout({ children }: { children: React.ReactNode }) {
@@ -76,10 +75,10 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
             />
          )}
 
-          <main className="mx-auto max-w-6xl px-5 py-10 md:px-6">
-             <div className="flex flex-col gap-10 lg:flex-row">
-                <article
-                   className="prose prose-zinc dark:prose-invert min-w-0 flex-1 max-w-none
+         <main className="mx-auto max-w-6xl px-5 py-10 md:px-6">
+            <div className="flex flex-col gap-10 lg:flex-row">
+               <article
+                  className="prose prose-zinc dark:prose-invert min-w-0 flex-1 max-w-none
               prose-code:before:content-none prose-code:after:content-none
               prose-code:rounded prose-code:bg-zinc-100 dark:prose-code:bg-zinc-800
               prose-code:px-1.5 prose-code:py-0.5 prose-code:text-sm prose-code:font-normal
@@ -98,8 +97,8 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
                   {children}
                </article>
 
-                  {headings.length > 0 && (
-            <div className="w-full shrink-0 self-start lg:sticky lg:top-20 lg:max-w-64">
+               {headings.length > 0 && (
+                  <div className="w-full shrink-0 self-start lg:sticky lg:top-20 lg:max-w-64">
                      <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">On this page</h4>
                      <LineNav
                         activeHref={`#${activeId}`}

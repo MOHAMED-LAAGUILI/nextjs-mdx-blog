@@ -18,8 +18,10 @@ A Blog app built using Next.js 16, MDX (markdown), Prismjs and Tailwind CSS 4 an
     ```bash
     bun install
     ```
+3. **.env**
+    copy env.example and rename it .env
 
-3.  **Run the development server**
+4.  **Run the development server**
 
     ```bash
     bun run dev

@@ -61,30 +61,37 @@ Anapec is particularly valuable for entry-level candidates and those seeking sta
 
 <Spacer />
 
-<Heading level={2} number="7">Scraping Job Listings with Python</Heading>
+<Heading level={2} number="7">Scraping Job Listings with JavaScript</Heading>
 
-If you are a developer, you can automate your job search by scraping listings from multiple platforms. Here is a simple example using Python:
+If you are a developer, you can automate your job search by scraping listings from multiple platforms. Here is a simple example using JavaScript (Node.js):
 
-<CodeBlock language="python">
-{`import requests
-from bs4 import BeautifulSoup
+<CodeBlock
+  language="javascript"
+  filename="scrape-jobs.js"
+  code={`import * as cheerio from "cheerio";
 
-def scrape_jobs(url):
-    response = requests.get(url)
-    soup = BeautifulSoup(response.text, "html.parser")
-    jobs = []
-    for listing in soup.select(".job-listing"):
-        title = listing.select_one(".title").text.strip()
-        company = listing.select_one(".company").text.strip()
-        jobs.append({"title": title, "company": company})
-    return jobs
+async function scrapeJobs(url) {
+  const res = await fetch(url);
+  const html = await res.text();
+  const $ = cheerio.load(html);
+  const jobs = [];
 
-# Example usage
-url = "https://example.com/jobs"
-results = scrape_jobs(url)
-for job in results:
-    print(f"{job['title']} at {job['company']}")`}
-</CodeBlock>
+  $(".job-listing").each((_, el) => {
+    const title = $(el).find(".title").text().trim();
+    const company = $(el).find(".company").text().trim();
+    jobs.push({ title, company });
+  });
+
+  return jobs;
+}
+
+// Example usage
+const url = "https://example.com/jobs";
+const results = await scrapeJobs(url);
+for (const job of results) {
+  console.log(\`\${job.title} at \${job.company}\`);
+}`}
+/>
 
 Always check the platform's terms of service and <Text code>robots.txt</Text> before scraping.
 

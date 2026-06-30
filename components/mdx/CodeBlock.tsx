@@ -1,49 +1,57 @@
 "use client";
 
-import { Check, Copy } from "lucide-react";
-import { useState } from "react";
+import { useMemo } from "react";
+import { CodeBlock as UiCodeBlock } from "@/components/ui/code-block";
 
-export default function CodeBlock({ children, language }: { children: React.ReactNode; language?: string }) {
-   const [copied, setCopied] = useState(false);
+type CodeBlockProps = {
+  language: string;
+  filename?: string;
+  code?: string;
+  highlightLines?: number[];
+  tabs?: Array<{
+    name: string;
+    code: string;
+    language?: string;
+    highlightLines?: number[];
+  }>;
+  children?: React.ReactNode;
+};
 
-   const copy = async () => {
-      const text = extractText(children);
-      await navigator.clipboard.writeText(text);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1500);
-   };
+export default function CodeBlock({
+  language,
+  filename,
+  code,
+  highlightLines,
+  tabs,
+  children,
+}: CodeBlockProps) {
+  const extracted = useMemo(() => children ? extractText(children) : "", [children]);
 
-   return (
-      <div className="group relative my-6">
-         <div className="flex items-center justify-between rounded-t-lg bg-zinc-800 px-4 py-2 text-xs text-zinc-400">
-            <div className="flex items-center gap-3">
-               <span className="flex gap-1.5">
-                  <span className="size-2.5 rounded-full bg-red-500" />
-                  <span className="size-2.5 rounded-full bg-yellow-500" />
-                  <span className="size-2.5 rounded-full bg-green-500" />
-               </span>
-               <span>{language || "code"}</span>
-            </div>
-            <button
-               onClick={copy}
-               className="flex items-center gap-1 hover:text-white transition-colors"
-            >
-               {copied ? <Check className="size-3.5" /> : <Copy className="size-3.5" />}
-               {copied ? "Copied" : "Copy"}
-            </button>
-         </div>
-         <pre className="m-0 rounded-t-none rounded-b-lg border border-t-0 border-zinc-700/50 bg-[#1e1e1e] p-4 text-sm leading-relaxed text-[#d4d4d4] shadow-lg overflow-x-auto">
-            {children}
-         </pre>
-      </div>
-   );
+  if (tabs && tabs.length > 0) {
+    return (
+      <UiCodeBlock
+        language={language || "javascript"}
+        filename={filename || ""}
+        tabs={tabs}
+      />
+    );
+  }
+
+  return (
+    <UiCodeBlock
+      language={language || "javascript"}
+      filename={filename || ""}
+      code={code || extracted}
+      highlightLines={highlightLines}
+    />
+  );
 }
 
 function extractText(node: React.ReactNode): string {
-   if (typeof node === "string") return node;
-   if (Array.isArray(node)) return node.map(extractText).join("");
-   if (node && typeof node === "object" && "props" in node) {
-      return extractText((node as any).props.children);
-   }
-   return "";
+  if (typeof node === "string") return node;
+  if (Array.isArray(node)) return node.map(extractText).join("");
+  if (node && typeof node === "object" && "props" in node) {
+    return extractText((node as any).props.children);
+  }
+  return "";
 }

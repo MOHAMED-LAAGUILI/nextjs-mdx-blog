@@ -155,3 +155,8 @@
     animation: none;
     mix-blend-mode: normal;
 }
+
+/* Code block always dark background, light text regardless of theme */
+pre:has(> code) code {
+  color: #d4d4d4 !important;
+}

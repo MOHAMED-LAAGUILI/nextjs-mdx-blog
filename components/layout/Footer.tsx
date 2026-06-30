@@ -6,8 +6,6 @@ import Link from "next/link";
 
 import { type NavItem, navLinks } from "@/data/navigation";
 
-
-
 export default function Footer() {
    return (
       <footer className="mt-10 border-t">
@@ -29,8 +27,6 @@ export default function Footer() {
                   Meta <span className="font-bold">Blog</span>
                </span>
             </Link>
-
-          
 
             {/* Copyright */}
             <p className="text-center text-sm text-muted-foreground">© {new Date().getFullYear()} Meta Blog. All rights reserved.</p>
