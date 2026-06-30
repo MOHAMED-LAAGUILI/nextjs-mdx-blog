@@ -64,7 +64,9 @@ export default function PostCard({ post }: PostCardProps) {
          <Card className="group overflow-hidden rounded-xl border py-0 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
             <div className="relative aspect-16/10 overflow-hidden bg-muted">
                <Image
-                  src={post.thumbnail || "/images/default.png"}
+                //  src={post.thumbnail || "/images/default.png"}
+                           src={"/images/default.png"}
+
                   alt={post.title}
                   fill
                   sizes="(max-width:768px) 100vw, (max-width:1280px) 50vw, 33vw"

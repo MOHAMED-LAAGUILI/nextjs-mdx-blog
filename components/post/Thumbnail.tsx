@@ -55,7 +55,9 @@ export default function Thumbnail() {
    return (
       <div className="relative mb-10 aspect-4/3 overflow-hidden rounded-2xl md:aspect-21/9 bg-muted">
          <Image
-            src={post.thumbnail || "/images/default.png"}
+            //src={post.thumbnail || "/images/default.png"}
+                        src={"/images/default.png"}
+
             alt={post.title}
             fill
             priority
