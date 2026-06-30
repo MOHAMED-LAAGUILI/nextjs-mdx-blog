@@ -46,7 +46,7 @@ export default function PostCard({ post }: PostCardProps) {
 
    return (
       <Link
-          href={`/post/${post.slug}`}
+         href={`/post/${post.slug}`}
          className="block"
       >
          <Card className="group overflow-hidden rounded-xl border py-0 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">

@@ -11,8 +11,8 @@ import { AnimatedThemeToggler } from "../ui/animated-theme-toggler";
 
 const iconMap: Record<string, typeof FileText> = {
    FileText,
-   Info,
    Home,
+   Info,
 };
 
 function NavLink({ item, onClick }: { item: NavItem; onClick?: () => void }) {

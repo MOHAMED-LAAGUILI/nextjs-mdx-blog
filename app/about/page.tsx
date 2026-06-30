@@ -1,4 +1,5 @@
 import { BookOpen, Code, ExternalLink, Globe, Mail, MapPin, PenLine, Terminal, Users, X } from "lucide-react";
+import type { Metadata } from "next";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -72,6 +73,12 @@ function SocialButton({ link, size = "sm" }: { link: SocialLink; size?: "sm" | "
       </a>
    );
 }
+
+export const metadata: Metadata = {
+   description: "Learn more about Meta Blog — the blog and the person behind it.",
+   openGraph: { description: "Learn more about Meta Blog — the blog and the person behind it.", title: "About | Meta Blog" },
+   title: "About",
+};
 
 export default async function AboutPage() {
    const totalPosts = posts.length;

@@ -1,6 +1,6 @@
 "use client";
 
-import { FileText, Info } from "lucide-react";
+import { FileText, Home, Info } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -8,6 +8,7 @@ import { type NavItem, navLinks } from "@/data/navigation";
 
 const iconMap: Record<string, typeof FileText> = {
    FileText,
+   Home,
    Info,
 };
 
