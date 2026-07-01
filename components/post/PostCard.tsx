@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 import { categoryColor, categoryIcon } from "./categories";
 
 interface PostCardProps {
@@ -38,20 +39,22 @@ export default function PostCard({ post }: PostCardProps) {
                <div className="absolute inset-0 bg-linear-to-t from-background/90 via-background/20 to-transparent" />
 
                <div className="absolute inset-x-0 bottom-0 space-y-2 p-4 backdrop-blur-sm">
-                  <Badge
-                     variant="secondary"
-                     className={`w-fit gap-1.5 ${categoryColor[post.category] || ""}`}
-                  >
-                     <Icon className="size-3" />
-                     {post.category}
-                  </Badge>
+                  <div className="flex items-center justify-between gap-3 text-xs">
+                     <Badge
+                        variant="secondary"
+                        className={cn("flex items-center gap-1.5 rounded-md px-2 py-0.5", categoryColor[post.category])}
+                     >
+                        <Icon className="size-3" />
+                        <span>{post.category}</span>
+                     </Badge>
+
+                     <div className="flex items-center gap-1.5 text-foreground">
+                        <Calendar className="size-3 shrink-0" />
+                        <time className="font-medium">{post.date}</time>
+                     </div>
+                  </div>
 
                   <h3 className="line-clamp-2 text-base font-bold leading-tight text-foreground">{post.title}</h3>
-
-                  <div className="flex items-center gap-1.5 text-xs text-foreground/70">
-                     <Calendar className="size-3" />
-                     <span>{post.date}</span>
-                  </div>
                </div>
             </div>
          </Card>

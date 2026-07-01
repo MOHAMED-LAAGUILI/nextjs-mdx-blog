@@ -1,4 +1,4 @@
-import { MdxLayout, Spacer, Heading, Paragraph, Link, Text, MdxImage, CodeBlock, Title, Video, Table, THead, Th, TBody, Tr, Td, Icon, MdxBadge } from "@/components/mdx";
+import { MdxLayout, Spacer, Heading, Paragraph, Link, Text, MdxImage, CodeBlock, Title, Video, Table, THead, Th, TBody, Tr, Td, Icon, MdxBadge, MdxChart, Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/mdx";
 
 <MdxLayout>
 
@@ -200,7 +200,29 @@ Here are the most common AI coding tools and how each persona tends to use them:
 
 <Spacer />
 
-<Heading level={2} number="9">Video: AI Coding in Practice</Heading>
+<Heading level={2} number="9">Tool Adoption Breakdown</Heading>
+
+<Paragraph lead>Based on a 2025 survey of 1,000 developers using AI coding tools:</Paragraph>
+
+<MdxChart
+  data={[
+    { label: "Copilot", values: { vibe: 40, assisted: 55, none: 5 } },
+    { label: "Cursor", values: { vibe: 35, assisted: 50, none: 15 } },
+    { label: "Claude", values: { vibe: 25, assisted: 60, none: 15 } },
+    { label: "ChatGPT", values: { vibe: 30, assisted: 45, none: 25 } },
+    { label: "Windsurf", values: { vibe: 45, assisted: 35, none: 20 } },
+    { label: "Codeium", values: { vibe: 20, assisted: 40, none: 40 } },
+  ]}
+  series={[
+    { key: "vibe", label: "Vibe Coder", color: "#f97316" },
+    { key: "assisted", label: "AI-Assisted", color: "#22c55e" },
+    { key: "none", label: "Don't Use", color: "#6b7280" },
+  ]}
+/>
+
+<Spacer />
+
+<Heading level={2} number="10">Video: AI Coding in Practice</Heading>
 
 Watch how an AI-Assisted Developer approaches a real coding session:
 
@@ -208,7 +230,30 @@ Watch how an AI-Assisted Developer approaches a real coding session:
 
 <Spacer />
 
-<Heading level={2} number="10">Final Thoughts</Heading>
+<Heading level={2} number="11">FAQ</Heading>
+
+<Accordion type="single" collapsible defaultValue="what-is">
+  <AccordionItem value="what-is">
+    <AccordionTrigger>What exactly is a Vibe Coder?</AccordionTrigger>
+    <AccordionContent>A Vibe Coder relies heavily on AI to generate code without fully understanding the output. They prompt, accept, and ship — trusting the AI to be correct without review. This works for prototypes but can lead to hard-to-debug issues in production.</AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="how-switch">
+    <AccordionTrigger>How do I transition from Vibe Coding to AI-Assisted?</AccordionTrigger>
+    <AccordionContent>Start by reviewing every AI suggestion before accepting. Ask the AI to explain its reasoning. Write tests for generated code. Refactor outputs to match your codebase style. Treat AI output as a draft, not a final product.</AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="when-vibe">
+    <AccordionTrigger>Is Vibe Coding ever the right choice?</AccordionTrigger>
+    <AccordionContent>Yes. For throwaway prototypes, personal projects, or exploring unfamiliar technologies, rapid iteration matters more than correctness. The key is knowing <Text italic>when</Text> to switch modes.</AccordionContent>
+  </AccordionItem>
+  <AccordionItem value="tools">
+    <AccordionTrigger>Which AI tool is best for assisted development?</AccordionTrigger>
+    <AccordionContent>GitHub Copilot and Claude are top choices for AI-Assisted workflows. Copilot excels at inline completions during active typing. Claude is better for explaining complex logic and generating well-structured functions you can adapt.</AccordionContent>
+  </AccordionItem>
+</Accordion>
+
+<Spacer />
+
+<Heading level={2} number="12">Final Thoughts</Heading>
 
 <Paragraph lead>AI is not going anywhere. The question is not whether to use it — it is how.</Paragraph>
 

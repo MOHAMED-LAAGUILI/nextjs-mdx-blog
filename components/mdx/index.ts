@@ -3,6 +3,8 @@ export { default as Heading } from "./Heading";
 export { default as Icon } from "./Icon";
 export { default as Link } from "./Link";
 export { default as MdxBadge } from "./MdxBadge";
+export { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "./MdxAccordion";
+export { default as MdxChart } from "./MdxChart";
 export { default as MdxImage } from "./MdxImage";
 export { default as MdxLayout } from "./mdx-layout";
 export { default as Paragraph } from "./Paragraph";

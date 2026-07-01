@@ -1,41 +1,48 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
+import { Ripples } from "ldrs/react";
+
+import "ldrs/react/Ripples.css";
+import { cn } from "@/lib/utils";
 
 export default function Preloader() {
-   const [fadeOut, setFadeOut] = useState(false);
-   const [hidden, setHidden] = useState(false);
+   const [isVisible, setIsVisible] = useState(true);
+   const [isFading, setIsFading] = useState(false);
+
+   const { theme } = useTheme();
+   const isDark = theme === "dark";
 
    useEffect(() => {
-      const timer = setTimeout(() => {
-         setFadeOut(true);
-         setTimeout(() => setHidden(true), 500);
+      const fadeTimer = setTimeout(() => {
+         setIsFading(true);
       }, 1000);
 
-      return () => clearTimeout(timer);
+      const hideTimer = setTimeout(() => {
+         setIsVisible(false);
+      }, 1500);
+
+      return () => {
+         clearTimeout(fadeTimer);
+         clearTimeout(hideTimer);
+      };
    }, []);
 
-   if (hidden) return null;
+   if (!isVisible) return null;
 
    return (
       <div
-         className={`fixed inset-0 z-100 flex items-center justify-center bg-background transition-opacity duration-500 ${
-            fadeOut ? "opacity-0" : "opacity-100"
-         }`}
+         className={cn("fixed inset-0 z-9999 flex items-center justify-center transition-opacity duration-500",
+             isFading ? "opacity-0" : "opacity-100",
+             isDark ? "bg-background" : "bg-white"
+      )}
       >
-         <div className="flex flex-col items-center gap-5">
-            <div className="flex items-center gap-3">
-               <img
-                  src="/logo.png"
-                  alt="Meta Blog"
-                  width={48}
-                  height={48}
-               />
-               <span className="text-3xl tracking-tight">
-                  Meta <span className="font-bold">Blog</span>
-               </span>
-            </div>
-         </div>
+         <Ripples
+            size="45"
+            speed="2"
+            color={isDark ? "#ffffff" : "#09090b"}
+         />
       </div>
    );
 }

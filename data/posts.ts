@@ -5,7 +5,7 @@ export const posts: IPost[] = [
    {
       author: "Admin",
       category: "Authentication",
-      date: "2025-06-05",
+      date: "2026-06-05",
       slug: "clerk-vs-oauth2",
       thumbnail: "/images/thumbnails/web-development.jpg",
       title: "Clerk vs OAuth 2.0: Authentication Approaches Compared",
@@ -13,7 +13,7 @@ export const posts: IPost[] = [
    {
       author: "Admin",
       category: "AI",
-      date: "2025-06-04",
+      date: "2026-06-04",
       slug: "claude-code-vs-chatgpt",
       thumbnail: "/images/thumbnails/web-development.jpg",
       title: "Claude Code vs ChatGPT: Which AI Assistant Is Right for You?",
@@ -21,7 +21,7 @@ export const posts: IPost[] = [
    {
       author: "Admin",
       category: "Backend",
-      date: "2025-06-03",
+      date: "2026-06-03",
       slug: "firebase-vs-supabase",
       thumbnail: "/images/thumbnails/web-development.jpg",
       title: "Firebase vs Supabase: Choosing Your Backend Platform",
@@ -29,7 +29,7 @@ export const posts: IPost[] = [
    {
       author: "Admin",
       category: "Backend",
-      date: "2025-06-02",
+      date: "2026-06-02",
       slug: "nodejs-express-vs-laravel",
       thumbnail: "/images/thumbnails/web-development.jpg",
       title: "Node.js/Express vs Laravel: Choosing the Right Backend Framework",
@@ -37,7 +37,7 @@ export const posts: IPost[] = [
    {
       author: "Admin",
       category: "Frontend",
-      date: "2025-06-01",
+      date: "2026-06-01",
       slug: "react-vs-next",
       thumbnail: "/images/thumbnails/web-development.jpg",
       title: "React vs Next.js: Understanding the Difference",
@@ -45,7 +45,7 @@ export const posts: IPost[] = [
    {
       author: "Admin",
       category: "Tools",
-      date: "2025-05-30",
+      date: "2026-05-30",
       slug: "webstorm-vs-vs-code",
       thumbnail: "/images/thumbnails/web-development.jpg",
       title: "WebStorm vs VS Code: Which Editor Should You Use?",
@@ -53,7 +53,7 @@ export const posts: IPost[] = [
    {
       author: "Admin",
       category: "CSS",
-      date: "2025-06-06",
+      date: "2026-06-06",
       slug: "tailwind-vs-bootstrap-vs-css-vs-sass",
       thumbnail: "/images/thumbnails/web-development.jpg",
       title: "Tailwind vs Bootstrap vs CSS vs Sass/SCSS: Choosing Your Styling Approach",
@@ -61,7 +61,7 @@ export const posts: IPost[] = [
    {
       author: "Admin",
       category: "TypeScript",
-      date: "2025-06-07",
+      date: "2026-06-07",
       slug: "typescript-vs-javascript",
       thumbnail: "/images/thumbnails/web-development.jpg",
       title: "TypeScript vs JavaScript: When to Use Which",
@@ -69,7 +69,7 @@ export const posts: IPost[] = [
    {
       author: "Admin",
       category: "Tools",
-      date: "2025-06-08",
+      date: "2026-06-08",
       slug: "biome-vs-eslint",
       thumbnail: "/images/thumbnails/web-development.jpg",
       title: "Biome vs ESLint: The Next Generation of Linting",
@@ -77,7 +77,7 @@ export const posts: IPost[] = [
    {
       author: "Admin",
       category: "Mobile",
-      date: "2025-06-09",
+      date: "2026-06-09",
       slug: "reactnative-expo-vs-kotlin-vs-flutter",
       thumbnail: "/images/thumbnails/web-development.jpg",
       title: "React Native (Expo) vs Kotlin vs Flutter: Choosing Your Mobile Framework",
@@ -85,7 +85,7 @@ export const posts: IPost[] = [
    {
       author: "Admin",
       category: "Tools",
-      date: "2025-06-10",
+      date: "2026-06-10",
       slug: "npm-vs-pnpm-vs-bun-vs-yarn",
       thumbnail: "/images/thumbnails/web-development.jpg",
       title: "npm vs pnpm vs bun vs Yarn: Choosing a Package Manager",
@@ -93,7 +93,7 @@ export const posts: IPost[] = [
    {
       author: "Admin",
       category: "Career",
-      date: "2025-06-11",
+      date: "2026-06-11",
       slug: "freelance-vs-employment",
       thumbnail: "/images/thumbnails/web-development.jpg",
       title: "Freelance vs Employment Contract: Which Career Path Is Right for You?",
@@ -101,7 +101,7 @@ export const posts: IPost[] = [
    {
       author: "Admin",
       category: "Career",
-      date: "2025-06-12",
+      date: "2026-06-12",
       slug: "morocco-job-platforms",
       thumbnail: "/images/thumbnails/web-development.jpg",
       title: "Morocco Job Platforms: LinkedIn, Indeed, Rekrute, Maroc Annonce, and Anapec Compared",
@@ -109,7 +109,7 @@ export const posts: IPost[] = [
    {
       author: "Admin",
       category: "AI",
-      date: "2025-06-15",
+      date: "2026-06-15",
       slug: "vibecoder-vs-ai-assisted-developer",
       thumbnail: "/images/thumbnails/web-development.jpg",
       title: "Vibe Coder vs AI-Assisted Developer: Which One Are You?",

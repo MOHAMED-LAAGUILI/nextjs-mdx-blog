@@ -118,19 +118,19 @@ export default function RootLayout({
          data-scroll-behavior="smooth"
       >
          <body
-            className={`${work_Sans.className} antialiased max-w-7xl mx-auto min-h-screen`}
+            className={`${work_Sans.className} antialiased max-w-7xl mx-auto min-h-screen bg-background`}
             suppressHydrationWarning
          >
-            <Preloader />
-            <ThemeProvider
-               attribute="class"
-               defaultTheme="system"
-               enableSystem
-               disableTransitionOnChange
-            >
-               {children}
-               <BackToTop />
-            </ThemeProvider>
+             <ThemeProvider
+                attribute="class"
+                defaultTheme="system"
+                enableSystem
+                disableTransitionOnChange
+             >
+                <Preloader />
+                {children}
+                <BackToTop />
+             </ThemeProvider>
          </body>
       </html>
    );
