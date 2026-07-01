@@ -14,7 +14,10 @@ export function StatsCard({ stats }: { stats: { icon: LucideIcon; label: string;
                {stats.map(stat => {
                   const StatIcon = stat.icon;
                   return (
-                     <div key={stat.label} className="flex items-center gap-4 rounded-xl border bg-card p-4">
+                     <div
+                        key={stat.label}
+                        className="flex items-center gap-4 rounded-xl border bg-card p-4"
+                     >
                         <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10">
                            <StatIcon className="size-5 text-primary" />
                         </div>

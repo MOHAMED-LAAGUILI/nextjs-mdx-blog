@@ -1,0 +1,225 @@
+import { MdxLayout, Spacer, Heading, Paragraph, Link, Text, MdxImage, CodeBlock, Title, Video, Table, THead, Th, TBody, Tr, Td, Icon, MdxBadge } from "@/components/mdx";
+
+<MdxLayout>
+
+<Spacer />
+
+<Title>Vibe Coder vs AI-Assisted Developer: Which One Are You?</Title>
+
+<Spacer />
+
+<Heading level={2} number="1">The Rise of AI in Software Development</Heading>
+
+<Paragraph lead>Artificial intelligence is reshaping how we write code. Two distinct personas have emerged: the <Text bold>Vibe Coder</Text> who lets AI drive, and the <Text bold>AI-Assisted Developer</Text> who stays in control. Understanding the difference is key to staying productive without losing your craft.</Paragraph>
+
+<MdxImage src="/images/default.png" alt="AI coding assistant interface showing code generation" />
+
+<Spacer />
+
+<Heading level={2} number="2">What Is a Vibe Coder?</Heading>
+
+A Vibe Coder relies heavily on AI to generate code, often without fully understanding what is being produced. The term comes from the feeling of "going with the flow" — prompting, accepting, and shipping without deep review.
+
+<Spacer />
+
+<Heading level={3} number="2.1">Typical Workflow</Heading>
+
+<CodeBlock
+  language="javascript"
+  filename="vibe-coder-prompt.js"
+  highlightLines={[1, 5]}
+  code={`// Prompt: "Build me a todo app with React"
+// The vibe coder pastes the AI output directly
+
+function TodoApp() {
+  // Generated code — barely reviewed
+  return (
+    <div>
+      <h1>My Todos</h1>
+      {/* AI wrote this. Looks fine. Ship it. */}
+    </div>
+  );
+}`}
+/>
+
+<Spacer />
+
+<Heading level={3} number="2.2">Common Traits</Heading>
+
+<Paragraph>Vibe coders <Text bold>move fast</Text> but often struggle to debug issues they cannot describe. They treat AI as an oracle rather than a pair programmer. The code works — until it does not, and then they are stuck.</Paragraph>
+
+<Spacer />
+
+<Heading level={2} number="3">What Is an AI-Assisted Developer?</Heading>
+
+An AI-Assisted Developer uses AI as a <Text italic>tool</Text>, not a replacement for understanding. They review every suggestion, refactor when needed, and treat generated code as a starting point rather than a final product.
+
+<Spacer />
+
+<Heading level={3} number="3.1">Typical Workflow</Heading>
+
+<CodeBlock
+  language="javascript"
+  filename="ai-assisted-developer.js"
+  highlightLines={[4, 9, 14]}
+  code={`// Prompt: "Generate a debounce hook"
+// The AI-Assisted Developer reviews and refines
+
+function useDebounce<T>(value: T, delay: number): T {
+  const [debounced, setDebounced] = useState(value);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setDebounced(value), delay);
+    return () => clearTimeout(timer);
+  }, [value, delay]);
+
+  return debounced;
+}
+
+// Reviewed: added generics, proper cleanup, correct deps`}
+/>
+
+<Spacer />
+
+<Heading level={3} number="3.2">The Mindset</Heading>
+
+The key difference is <Text bold>ownership</Text>. AI-Assisted Developers own every line of code in their project, whether they typed it or not. They can explain, modify, and debug any part of the system.
+
+<Spacer />
+
+<Heading level={2} number="4">Side-by-Side Comparison</Heading>
+
+<CodeBlock
+  language="javascript"
+  filename="comparison.js"
+  code={`// Vibe Coder approach
+function calculateTotal(items) {
+  // AI wrote this — not sure how it works
+  return items.reduce((acc, item) => acc + item.price * item.qty, 0);
+}
+
+// AI-Assisted Developer approach
+function calculateTotal(items: CartItem[]): number {
+  // Reviewed: handles edge cases, typed properly
+  if (!items?.length) return 0;
+  return items.reduce((sum, item) => {
+    if (item.price < 0 || item.qty < 0) {
+      throw new Error("Invalid item data");
+    }
+    return sum + item.price * item.qty;
+  }, 0);
+}`}
+/>
+
+<Spacer />
+
+<Heading level={2} number="5">Which Path Is Right for You?</Heading>
+
+<Heading level={3} number="5.1">Go Vibe Coder When</Heading>
+
+You are prototyping, building a personal project, or exploring an unfamiliar technology. Speed matters more than correctness or maintainability.
+
+<Spacer />
+
+<Heading level={3} number="5.2">Go AI-Assisted When</Heading>
+
+You are working on a <Link href="https://en.wikipedia.org/wiki/Production_environment">production system</Link>, collaborating with a team, or building something that needs to last. Quality, testability, and maintainability matter.
+
+<Spacer />
+
+<Heading level={2} number="6">A Practical Example: Writing a Test</Heading>
+
+<Paragraph lead>Let us compare how each persona approaches writing a unit test for a simple utility function.</Paragraph>
+
+<CodeBlock
+  language="typescript"
+  filename="utils.test.ts"
+  highlightLines={[8, 12]}
+  code={`import { describe, it, expect } from "vitest";
+import { formatDate } from "./utils";
+
+describe("formatDate", () => {
+  it("formats ISO string to readable date", () => {
+    // Vibe coder: accepts AI output without question
+    // AI-Assisted: verifies locale, timezone, and edge cases
+    const result = formatDate("2025-06-15T10:00:00Z");
+    expect(result).toBe("June 15, 2025");
+
+    // Edge case AI-Assisted Developer adds
+    expect(formatDate("")).toBe("—");
+    expect(formatDate(null)).toBe("—");
+  });
+});`}
+/>
+
+<Spacer />
+
+<Heading level={2} number="7">Real-World Analogy</Heading>
+
+<Paragraph lead>Think of it like driving:</Paragraph>
+
+The <Text bold>Vibe Coder</Text> is a passenger in a self-driving car. They enjoy the ride but cannot take the wheel if something goes wrong.
+
+The <Text bold>AI-Assisted Developer</Text> is a pilot using autopilot. The autopilot handles the routine, but the pilot knows how to fly manually, navigate turbulence, and land safely.
+
+<Spacer />
+
+<Heading level={2} number="8">Tools of the Trade</Heading>
+
+Here are the most common AI coding tools and how each persona tends to use them:
+
+<Table>
+  <THead>
+    <Th><Icon name="code" /> Tool</Th>
+    <Th><Icon name="sparkles" /> Vibe Coder</Th>
+    <Th><Icon name="brain" /> AI-Assisted Developer</Th>
+  </THead>
+  <TBody>
+    <Tr>
+      <Td><Icon name="code" className="mr-1 inline size-4 align-text-bottom" /> GitHub Copilot</Td>
+      <Td><MdxBadge variant="danger">Tab-completes blindly</MdxBadge></Td>
+      <Td><MdxBadge variant="success">Reviews every suggestion</MdxBadge></Td>
+    </Tr>
+    <Tr>
+      <Td><Icon name="file" className="mr-1 inline size-4 align-text-bottom" /> Cursor</Td>
+      <Td><MdxBadge variant="danger">Trusts entire file rewrite</MdxBadge></Td>
+      <Td><MdxBadge variant="success">Accepts line-by-line</MdxBadge></Td>
+    </Tr>
+    <Tr>
+      <Td><Icon name="sparkles" className="mr-1 inline size-4 align-text-bottom" /> Claude</Td>
+      <Td><MdxBadge variant="warning">Asks for full implementations</MdxBadge></Td>
+      <Td><MdxBadge variant="success">Asks for snippets & adapts</MdxBadge></Td>
+    </Tr>
+    <Tr>
+      <Td><Icon name="terminal" className="mr-1 inline size-4 align-text-bottom" /> ChatGPT</Td>
+      <Td><MdxBadge variant="danger">Pastes errors verbatim</MdxBadge></Td>
+      <Td><MdxBadge variant="success">Describes problem & evaluates</MdxBadge></Td>
+    </Tr>
+  </TBody>
+</Table>
+
+<Spacer />
+
+<Heading level={2} number="9">Video: AI Coding in Practice</Heading>
+
+Watch how an AI-Assisted Developer approaches a real coding session:
+
+<Video src="/videos/coding-session.mp4" title="AI-Assisted coding session walkthrough" />
+
+<Spacer />
+
+<Heading level={2} number="10">Final Thoughts</Heading>
+
+<Paragraph lead>AI is not going anywhere. The question is not whether to use it — it is how.</Paragraph>
+
+The <Text bold>Vibe Coder</Text> approach works for throwaway projects and rapid exploration. The <Text bold>AI-Assisted Developer</Text> approach scales to production systems, team collaboration, and long-term maintainability.
+
+Neither is inherently wrong. The best developers learn to switch between modes depending on the context. Use AI to accelerate, not to abdicate.
+
+<Spacer />
+
+<Paragraph muted>Published on June 15, 2025. This article was written to help developers reflect on their relationship with AI coding tools. No AI was used to generate this article — only to assist in editing.</Paragraph>
+
+<Spacer />
+
+</MdxLayout>

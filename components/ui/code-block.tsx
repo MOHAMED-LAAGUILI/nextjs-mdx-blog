@@ -166,7 +166,7 @@ export const CodeBlock = ({ language, filename, code, highlightLines = [], tabs 
                   width: "100%",
                },
             })}
-            PreTag="div"
+            PreTag="pre"
          >
             {String(activeCode)}
          </SyntaxHighlighter>

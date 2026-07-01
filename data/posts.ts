@@ -106,4 +106,12 @@ export const posts: IPost[] = [
       thumbnail: "/images/thumbnails/web-development.jpg",
       title: "Morocco Job Platforms: LinkedIn, Indeed, Rekrute, Maroc Annonce, and Anapec Compared",
    },
+   {
+      author: "Admin",
+      category: "AI",
+      date: "2025-06-15",
+      slug: "vibecoder-vs-ai-assisted-developer",
+      thumbnail: "/images/thumbnails/web-development.jpg",
+      title: "Vibe Coder vs AI-Assisted Developer: Which One Are You?",
+   },
 ];

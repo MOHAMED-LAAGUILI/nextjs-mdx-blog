@@ -12,7 +12,10 @@ export function BlogDescriptionCard({ descriptions }: { descriptions: string[] }
 
             <div className="space-y-4">
                {descriptions.map((text, index) => (
-                  <p key={index} className="leading-7 text-muted-foreground">
+                  <p
+                     key={index}
+                     className="leading-7 text-muted-foreground"
+                  >
                      {text}
                   </p>
                ))}

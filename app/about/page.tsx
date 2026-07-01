@@ -1,8 +1,8 @@
 import { BookOpen, PenLine } from "lucide-react";
 import type { Metadata } from "next";
+import { BlogDescriptionCard, ProfileCard, StatsCard } from "@/components/about";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
-import { BlogDescriptionCard, ProfileCard, StatsCard } from "@/components/about";
 
 import { aboutData } from "@/data/about";
 import { posts } from "@/data/posts";

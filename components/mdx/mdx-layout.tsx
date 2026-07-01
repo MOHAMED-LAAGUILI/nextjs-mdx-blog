@@ -9,9 +9,9 @@ import { posts } from "@/data/posts";
 import RelatedPosts from "../post/RelatedPosts";
 import Thumbnail from "../post/Thumbnail";
 import { LineNav } from "../ui/line-nav";
-import { BackToTop } from "./BackToTop";
-import Footer from "./Footer";
-import Header from "./Header";
+import { BackToTop } from "../layout/BackToTop";
+import Footer from "../layout/Footer";
+import Header from "../layout/Header";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mo-blog-rose.vercel.app";
 
