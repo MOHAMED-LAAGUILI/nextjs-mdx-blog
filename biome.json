@@ -9,7 +9,7 @@
       }
     },
     "enabled": true,
-    "includes": ["**/*.{ts,tsx,json,js,jsx}"]
+    "includes": ["**/*.{ts,tsx,json,js,jsx,mdx}"]
   },
 
   "files": {
