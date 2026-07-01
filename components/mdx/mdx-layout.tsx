@@ -6,12 +6,12 @@ import { usePathname } from "next/navigation";
 import { ArticleJsonLd } from "next-seo";
 import { useEffect, useState } from "react";
 import { posts } from "@/data/posts";
-import RelatedPosts from "../post/RelatedPosts";
-import Thumbnail from "../post/Thumbnail";
-import { LineNav } from "../ui/line-nav";
 import { BackToTop } from "../layout/BackToTop";
 import Footer from "../layout/Footer";
 import Header from "../layout/Header";
+import RelatedPosts from "../post/RelatedPosts";
+import Thumbnail from "../post/Thumbnail";
+import { LineNav } from "../ui/line-nav";
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://mo-blog-rose.vercel.app";
 

@@ -1,14 +1,13 @@
 export { default as CodeBlock } from "./CodeBlock";
 export { default as Heading } from "./Heading";
+export { default as Icon } from "./Icon";
 export { default as Link } from "./Link";
+export { default as MdxBadge } from "./MdxBadge";
 export { default as MdxImage } from "./MdxImage";
+export { default as MdxLayout } from "./mdx-layout";
 export { default as Paragraph } from "./Paragraph";
 export { default as Spacer } from "./Spacer";
+export { default as Table, TBody, Td, THead, Th, Tr } from "./Table";
 export { default as Text } from "./Text";
 export { default as Title } from "./Title";
 export { default as Video } from "./Video";
-export { default as Table } from "./Table";
-export { THead, Th, TBody, Tr, Td } from "./Table";
-export { default as Icon } from "./Icon";
-export { default as MdxBadge } from "./MdxBadge";
-export { default as MdxLayout } from "./mdx-layout";

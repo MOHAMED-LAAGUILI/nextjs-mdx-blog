@@ -12,7 +12,13 @@ export default function Video({ src, title, poster }: { src: string; title?: str
             {title ? <track kind="captions" /> : null}
             <p>
                Your browser doesn&apos;t support HTML video.
-               <a href={src} className="underline">Download the video</a>.
+               <a
+                  href={src}
+                  className="underline"
+               >
+                  Download the video
+               </a>
+               .
             </p>
          </video>
       </div>

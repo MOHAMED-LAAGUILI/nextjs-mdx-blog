@@ -24,7 +24,14 @@ export default function Heading({ level = 2, number, children }: { level?: 1 | 2
 
    const Tag = `h${level}` as const;
 
-   return <Tag id={id} className={cls}>{content}</Tag>;
+   return (
+      <Tag
+         id={id}
+         className={cls}
+      >
+         {content}
+      </Tag>
+   );
 }
 
 function extractText(node: ReactNode): string {

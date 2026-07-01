@@ -12,9 +12,7 @@ export default function Link({ href, children, external: forceExternal }: { href
          className="font-semibold underline underline-offset-2 hover:no-underline"
       >
          {children}
-         {isExternal && (
-            <span className="sr-only">(opens in new tab)</span>
-         )}
+         {isExternal && <span className="sr-only">(opens in new tab)</span>}
       </a>
    );
 }
