@@ -5,6 +5,7 @@ import { useTheme } from "next-themes";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { flushSync } from "react-dom";
 import { cn } from "@/lib/utils";
+import { useThemeStore } from "@/stores/theme";
 
 export type TransitionVariant = "circle" | "square" | "triangle" | "diamond" | "hexagon" | "rectangle" | "star";
 
@@ -119,11 +120,16 @@ export const AnimatedThemeToggler = ({
    const isDark = isControlled ? theme === "dark" : internalIsDark;
    const buttonRef = useRef<HTMLButtonElement>(null);
    const { setTheme } = useTheme();
+   const setStoreTheme = useThemeStore(s => s.setTheme);
+   const setStoreResolved = useThemeStore(s => s.setResolvedTheme);
+
    useEffect(() => {
       if (isControlled) return;
 
       const updateTheme = () => {
-         setInternalIsDark(document.documentElement.classList.contains("dark"));
+         const dark = document.documentElement.classList.contains("dark");
+         setInternalIsDark(dark);
+         setStoreResolved(dark ? "dark" : "light");
       };
 
       updateTheme();
@@ -135,11 +141,14 @@ export const AnimatedThemeToggler = ({
       });
 
       return () => observer.disconnect();
-   }, [isControlled]);
+   }, [isControlled, setStoreResolved]);
 
    const toggleTheme = useCallback(() => {
       const button = buttonRef.current;
       if (!button) return;
+
+      const newThemeValue = !isDark ? "dark" : "light";
+      setStoreTheme(newThemeValue);
 
       const viewportWidth = window.visualViewport?.width ?? window.innerWidth;
       const viewportHeight = window.visualViewport?.height ?? window.innerHeight;
@@ -159,18 +168,17 @@ export const AnimatedThemeToggler = ({
 
       const applyTheme = () => {
          const newTheme = !isDark;
-         // Always toggle the class synchronously so the View Transitions API
-         // snapshots the new theme inside the startViewTransition callback.
+         const val = newTheme ? "dark" : "light";
          document.documentElement.classList.toggle("dark");
          if (isControlled) {
-            onThemeChange?.(newTheme ? "dark" : "light");
-            setTheme(newTheme ? "dark" : "light");
+            onThemeChange?.(val);
+            setTheme(val);
          } else {
             setInternalIsDark(newTheme);
-            setTheme(newTheme ? "dark" : "light");
-
-            localStorage.setItem("theme", newTheme ? "dark" : "light");
+            setTheme(val);
+            localStorage.setItem("theme", val);
          }
+         setStoreResolved(val);
       };
 
       if (typeof document.startViewTransition !== "function") {
@@ -218,7 +226,7 @@ export const AnimatedThemeToggler = ({
             );
          });
       }
-   }, [shape, fromCenter, duration, isDark, isControlled, onThemeChange]);
+   }, [shape, fromCenter, duration, isDark, isControlled, onThemeChange, setStoreTheme, setStoreResolved]);
 
    return (
       <button

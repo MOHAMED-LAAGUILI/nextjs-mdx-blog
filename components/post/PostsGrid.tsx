@@ -6,7 +6,6 @@ interface PostsGridProps {
       title: string;
       thumbnail: string;
       category: string;
-      author: string;
       date: string;
    }[];
 }

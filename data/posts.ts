@@ -3,7 +3,6 @@ import { IPost } from "@/types/post";
 
 export const posts: IPost[] = [
    {
-      author: "Admin",
       category: "Authentication",
       date: "2026-06-05",
       slug: "clerk-vs-oauth2",
@@ -11,7 +10,6 @@ export const posts: IPost[] = [
       title: "Clerk vs OAuth 2.0: Authentication Approaches Compared",
    },
    {
-      author: "Admin",
       category: "AI",
       date: "2026-06-04",
       slug: "claude-code-vs-chatgpt",
@@ -19,7 +17,6 @@ export const posts: IPost[] = [
       title: "Claude Code vs ChatGPT: Which AI Assistant Is Right for You?",
    },
    {
-      author: "Admin",
       category: "Backend",
       date: "2026-06-03",
       slug: "firebase-vs-supabase",
@@ -27,7 +24,6 @@ export const posts: IPost[] = [
       title: "Firebase vs Supabase: Choosing Your Backend Platform",
    },
    {
-      author: "Admin",
       category: "Backend",
       date: "2026-06-02",
       slug: "nodejs-express-vs-laravel",
@@ -35,7 +31,7 @@ export const posts: IPost[] = [
       title: "Node.js/Express vs Laravel: Choosing the Right Backend Framework",
    },
    {
-      author: "Admin",
+      
       category: "Frontend",
       date: "2026-06-01",
       slug: "react-vs-next",
@@ -43,7 +39,7 @@ export const posts: IPost[] = [
       title: "React vs Next.js: Understanding the Difference",
    },
    {
-      author: "Admin",
+       
       category: "Tools",
       date: "2026-05-30",
       slug: "webstorm-vs-vs-code",
@@ -51,7 +47,7 @@ export const posts: IPost[] = [
       title: "WebStorm vs VS Code: Which Editor Should You Use?",
    },
    {
-      author: "Admin",
+       
       category: "CSS",
       date: "2026-06-06",
       slug: "tailwind-vs-bootstrap-vs-css-vs-sass",
@@ -59,7 +55,7 @@ export const posts: IPost[] = [
       title: "Tailwind vs Bootstrap vs CSS vs Sass/SCSS: Choosing Your Styling Approach",
    },
    {
-      author: "Admin",
+       
       category: "TypeScript",
       date: "2026-06-07",
       slug: "typescript-vs-javascript",
@@ -67,7 +63,7 @@ export const posts: IPost[] = [
       title: "TypeScript vs JavaScript: When to Use Which",
    },
    {
-      author: "Admin",
+       
       category: "Tools",
       date: "2026-06-08",
       slug: "biome-vs-eslint",
@@ -75,7 +71,7 @@ export const posts: IPost[] = [
       title: "Biome vs ESLint: The Next Generation of Linting",
    },
    {
-      author: "Admin",
+       
       category: "Mobile",
       date: "2026-06-09",
       slug: "reactnative-expo-vs-kotlin-vs-flutter",
@@ -83,7 +79,7 @@ export const posts: IPost[] = [
       title: "React Native (Expo) vs Kotlin vs Flutter: Choosing Your Mobile Framework",
    },
    {
-      author: "Admin",
+       
       category: "Tools",
       date: "2026-06-10",
       slug: "npm-vs-pnpm-vs-bun-vs-yarn",
@@ -91,7 +87,7 @@ export const posts: IPost[] = [
       title: "npm vs pnpm vs bun vs Yarn: Choosing a Package Manager",
    },
    {
-      author: "Admin",
+       
       category: "Career",
       date: "2026-06-11",
       slug: "freelance-vs-employment",
@@ -99,7 +95,7 @@ export const posts: IPost[] = [
       title: "Freelance vs Employment Contract: Which Career Path Is Right for You?",
    },
    {
-      author: "Admin",
+       
       category: "Career",
       date: "2026-06-12",
       slug: "morocco-job-platforms",
@@ -107,7 +103,7 @@ export const posts: IPost[] = [
       title: "Morocco Job Platforms: LinkedIn, Indeed, Rekrute, Maroc Annonce, and Anapec Compared",
    },
    {
-      author: "Admin",
+       
       category: "AI",
       date: "2026-06-15",
       slug: "vibecoder-vs-ai-assisted-developer",

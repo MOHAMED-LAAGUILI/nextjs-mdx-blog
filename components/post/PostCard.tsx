@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { BorderBeam } from "../ui/border-beam";
 import { categoryColor, categoryIcon } from "./categories";
 
 interface PostCardProps {
@@ -12,7 +13,6 @@ interface PostCardProps {
       title: string;
       thumbnail: string;
       category: string;
-      author: string;
       date: string;
    };
 }
@@ -25,7 +25,7 @@ export default function PostCard({ post }: PostCardProps) {
          href={`/post/${post.slug}`}
          className="block"
       >
-         <Card className="group overflow-hidden rounded-xl border py-0 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+         <Card className="group relative overflow-hidden rounded-xl border py-0 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
             <div className="relative aspect-16/10 overflow-hidden bg-muted">
                <Image
                   //  src={post.thumbnail || "/images/default.png"}
@@ -57,6 +57,11 @@ export default function PostCard({ post }: PostCardProps) {
                   <h3 className="line-clamp-2 text-base font-bold leading-tight text-foreground">{post.title}</h3>
                </div>
             </div>
+
+            <BorderBeam
+               duration={8}
+               size={200}
+            />
          </Card>
       </Link>
    );

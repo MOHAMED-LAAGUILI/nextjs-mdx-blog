@@ -1,100 +1,65 @@
 "use client";
 
-import { CircleX, FileText, Home, Info, Menu, X } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { navLinks } from "@/data/navigation";
-import { NavItem } from "@/types/navigation";
 import { AnimatedThemeToggler } from "../ui/animated-theme-toggler";
-
-const iconMap: Record<string, typeof FileText> = {
-   CircleX,
-   FileText,
-   Home,
-   Info,
-};
-
-function NavLink({ item, onClick }: { item: NavItem; onClick?: () => void }) {
-   const pathname = usePathname();
-   const Icon = iconMap[item.icon] || FileText;
-   const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
-
-   return (
-      <Link
-         href={item.href}
-         onClick={onClick}
-         className={`inline-flex items-center gap-1.5 text-sm font-medium transition-colors ${
-            isActive ? "text-primary" : "text-muted-foreground hover:text-foreground"
-         }`}
-      >
-         <Icon className="size-4" />
-         {item.label}
-      </Link>
-   );
-}
+import Logo from "./Logo";
+import MobileNav from "./MobileNav";
+import { NavLink } from "./NavLink";
 
 export default function Header() {
    const [menuOpen, setMenuOpen] = useState(false);
 
+   useEffect(() => {
+      document.body.style.overflow = menuOpen ? "hidden" : "";
+      return () => {
+         document.body.style.overflow = "";
+      };
+   }, [menuOpen]);
+
    return (
-      <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-md">
-         <div className="flex items-center justify-between px-4 py-3 md:px-8 md:py-4">
-            <Link
-               href="/"
-               className="flex items-center gap-2"
-            >
-               <Image
-                  src={"/logo.png"}
-                  width={32}
-                  height={32}
-                  alt="logo"
-                  priority
-                  className="size-7 md:size-8"
-               />
-               <span className=" md:text-xl">
-                  Meta <span className="font-bold">Blog</span>
-               </span>
-            </Link>
+      <>
+         <header className="fixed inset-x-0 top-0 z-60 border-b border-border/50 bg-background/80 backdrop-blur-xl supports-backdrop-filter:bg-background/70">
+            <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 md:px-8">
+               <Logo />
 
-            <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 md:flex">
-               {navLinks.map(item => (
-                  <NavLink
-                     key={item.href}
-                     item={item}
-                  />
-               ))}
-            </nav>
-
-            <div className="flex items-center gap-2">
-               <AnimatedThemeToggler />
-               <Button
-                  variant="ghost"
-                  size="icon"
-                  className="md:hidden"
-                  onClick={() => setMenuOpen(!menuOpen)}
-                  aria-label={menuOpen ? "Close menu" : "Open menu"}
-               >
-                  {menuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
-               </Button>
-            </div>
-         </div>
-
-         {menuOpen && (
-            <div className="border-t px-4 pb-4 md:hidden">
-               <nav className="flex flex-col gap-3 pt-3">
+               {/* Desktop Navigation */}
+               <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 md:flex">
                   {navLinks.map(item => (
                      <NavLink
                         key={item.href}
                         item={item}
-                        onClick={() => setMenuOpen(false)}
                      />
                   ))}
                </nav>
+
+               {/* Right Actions */}
+               <div className="flex items-center gap-2">
+                  <AnimatedThemeToggler />
+
+                  <Button
+                     variant="ghost"
+                     size="icon"
+                     className="md:hidden"
+                     onClick={() => setMenuOpen(!menuOpen)}
+                     aria-label={menuOpen ? "Close menu" : "Open menu"}
+                  >
+                     {menuOpen ? <X className="size-5" /> : <Menu className="size-5" />}
+                  </Button>
+               </div>
             </div>
-         )}
-      </header>
+         </header>
+
+         {/* Spacer for fixed header */}
+         <div className="h-16" />
+
+         {/* Mobile Menu */}
+         <MobileNav
+            isOpen={menuOpen}
+            onClose={() => setMenuOpen(false)}
+         />
+      </>
    );
 }

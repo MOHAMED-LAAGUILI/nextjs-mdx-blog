@@ -3,6 +3,7 @@ import { Inter, Noto_Sans, Work_Sans } from "next/font/google";
 import "./globals.css";
 import { BackToTop } from "@/components/layout/BackToTop";
 import Preloader from "@/components/layout/Preloader";
+import { InteractiveGridPattern } from "@/components/ui/interactive-grid-pattern";
 import { getMetaInfo } from "@/data/meta";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/providers/ThemeProvider";
@@ -118,19 +119,24 @@ export default function RootLayout({
          data-scroll-behavior="smooth"
       >
          <body
-            className={`${work_Sans.className} antialiased max-w-7xl mx-auto min-h-screen bg-background`}
+            className={`${work_Sans.className} antialiased max-w-7xl mx-auto min-h-screen `}
             suppressHydrationWarning
          >
-             <ThemeProvider
-                attribute="class"
-                defaultTheme="system"
-                enableSystem
-                disableTransitionOnChange
-             >
-                <Preloader />
-                {children}
-                <BackToTop />
-             </ThemeProvider>
+            <ThemeProvider
+               attribute="class"
+               defaultTheme="light"
+               disableTransitionOnChange
+            >
+               <Preloader />
+               <div className="relative bg-background/40">
+                  <InteractiveGridPattern
+                     className="fixed inset-0 -z-10 pointer-events-none blur-[1px] opacity-90 mask-[radial-gradient(800px_circle_at_center,white,transparent)]"
+                     squares={[50, 50]}
+                  />
+                  {children}
+               </div>
+               <BackToTop />
+            </ThemeProvider>
          </body>
       </html>
    );

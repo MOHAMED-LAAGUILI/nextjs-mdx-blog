@@ -4,5 +4,4 @@ export interface IPost {
    date: string;
    category: string;
    thumbnail: string;
-   author: string;
 }

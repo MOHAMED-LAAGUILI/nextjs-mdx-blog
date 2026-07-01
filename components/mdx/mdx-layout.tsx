@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArticleJsonLd } from "next-seo";
 import { useEffect, useState } from "react";
+import { aboutData } from "@/data/about";
 import { posts } from "@/data/posts";
 import { BackToTop } from "../layout/BackToTop";
 import Footer from "../layout/Footer";
@@ -70,7 +71,7 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
                headline={post.title}
                url={`${BASE_URL}/post/${post.slug}`}
                datePublished={new Date(post.date).toISOString()}
-               author={{ "@type": "Person", name: post.author }}
+               author={{ "@type": "Person", name: aboutData.name }}
                image={`${BASE_URL}/${post.thumbnail}`}
                description={`Read about ${post.title} on Meta Blog.`}
             />

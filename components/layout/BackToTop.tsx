@@ -4,33 +4,34 @@ import { ChevronUp } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import { useThemeStore } from "@/stores/theme";
 
 export function BackToTop() {
    const [scrollProgress, setScrollProgress] = useState(0);
    const [isVisible, setIsVisible] = useState(false);
    const { theme } = useTheme();
-   const isDark = theme === "dark";
+   const resolvedTheme = useThemeStore(s => s.resolvedTheme);
+   const isDark = (resolvedTheme ?? theme) === "dark";
    const trackStroke = isDark ? "#27272a" : "#cbd5e1";
+
+   const setResolvedTheme = useThemeStore(s => s.setResolvedTheme);
+
+   useEffect(() => {
+      setResolvedTheme(theme);
+   }, [theme, setResolvedTheme]);
 
    useEffect(() => {
       const updateScrollProgress = () => {
-         // Calculate how far down the page the user has scrolled
          const scrollTop = window.scrollY;
          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
          const scrollPercent = scrollTop / docHeight;
          setScrollProgress(scrollPercent);
-
-         // Show indicator only after scrolling a bit
          setIsVisible(scrollTop > 100);
       };
 
-      // Add scroll event listener
       window.addEventListener("scroll", updateScrollProgress, { passive: true });
-
-      // Initial calculation
       updateScrollProgress();
 
-      // Clean up event listener
       return () => window.removeEventListener("scroll", updateScrollProgress);
    }, []);
 

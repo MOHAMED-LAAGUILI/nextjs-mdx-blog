@@ -1,11 +1,6 @@
-"use client"
+"use client";
 
-import {
-  Accordion as AccordionRoot,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
+import { AccordionContent, AccordionItem, Accordion as AccordionRoot, AccordionTrigger } from "@/components/ui/accordion";
 
-export const Accordion = AccordionRoot
-export { AccordionContent, AccordionItem, AccordionTrigger }
+export const Accordion = AccordionRoot;
+export { AccordionContent, AccordionItem, AccordionTrigger };
